@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "213665416995",
+    "project_id": "taskappty",
+    "storage_bucket": "taskappty.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:213665416995:android:d0ad63852cec9a6e8e6e96",
+        "android_client_info": {
+          "package_name": "com.example.taskappty"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB0HTEow-1K2WD8sbpkJWKy1fuxNJRJoGs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
