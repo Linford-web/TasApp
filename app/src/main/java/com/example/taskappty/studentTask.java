@@ -2,6 +2,7 @@ package com.example.taskappty;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SearchView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -15,7 +16,6 @@ import com.example.taskappty.model.TaskModel;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.search.SearchView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -31,6 +31,7 @@ public class studentTask extends AppCompatActivity {
         TextView back;
         ArrayList<TaskModel> pendingTasks;
         TaskListAdapter taskListAdapter;
+        SearchView searchView;
         FirebaseFirestore fStore;
         FirebaseAuth fAuth;
 
@@ -44,7 +45,7 @@ public class studentTask extends AppCompatActivity {
             fAuth = FirebaseAuth.getInstance();
 
             userNameTv = findViewById(R.id.get_user_name);
-
+            searchView = findViewById(R.id.search_view);
             back = findViewById(R.id.back_box);
 
 
@@ -53,9 +54,28 @@ public class studentTask extends AppCompatActivity {
             taskRv.setLayoutManager(new LinearLayoutManager(this));
 
             pendingTasks = new ArrayList<>();
+            taskListAdapter = new TaskListAdapter(new ArrayList<>(pendingTasks));
             taskListAdapter = new TaskListAdapter(pendingTasks);
             taskRv.setAdapter(taskListAdapter);
 
+
+            // fetch all pending tasks
+            fetchPendingTasks();
+
+            searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+                @Override
+                public boolean onQueryTextSubmit(String query) {
+
+                    return false;
+                }
+
+                @Override
+                public boolean onQueryTextChange(String newText) {
+                    filter(newText);
+
+                    return true;
+                }
+            });
 
             // set the floating back button to return user to Dash
             back.setOnClickListener(new View.OnClickListener() {
@@ -65,13 +85,35 @@ public class studentTask extends AppCompatActivity {
                 }
             });
 
-            // fetch all pending tasks
-            fetchPendingTasks();
             // get user name and display it
             fetchUserName();
 
-
         }
+
+    private void filter(String newText) {
+
+            /*
+        if (newText.isEmpty()) {
+            // If search text is empty, show all tasks
+            taskListAdapter.filterList(new ArrayList<>(pendingTasks));
+        } else {
+            // Filter the tasks based on the search text
+            ArrayList<TaskModel> filteredList = new ArrayList<>();
+            for (TaskModel item : pendingTasks) {
+                if (item.getTaskName().toLowerCase().contains(newText.toLowerCase())) {
+                    filteredList.add(item);
+                }
+            }*/
+
+            ArrayList<TaskModel> filteredList = new ArrayList<>();
+            for (TaskModel item : pendingTasks){
+                if (item.getTaskName().toLowerCase().contains(newText.toLowerCase())){
+                    filteredList.add(item);
+                }
+            }
+
+            taskListAdapter.filterList(filteredList);
+    }
 
     private void fetchPendingTasks() {
 
@@ -95,6 +137,10 @@ public class studentTask extends AppCompatActivity {
                             } else {
                                 Log.d("TAG", "Error getting documents: ", task.getException());
                                 Toast.makeText(studentTask.this, "Error fetching PENDING Tasks", Toast.LENGTH_SHORT).show();
+                            }
+
+                            if (!isFinishing()) {
+                                taskListAdapter.notifyDataSetChanged(); // Notify the adapter after updating the dataset
                             }
                         }
                     });

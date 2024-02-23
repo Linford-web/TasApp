@@ -28,11 +28,12 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.protobuf.StringValue;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 public class TaskListAdapter extends RecyclerView.Adapter<TaskListAdapter.ViewHolder> {
 
-    private final ArrayList<TaskModel> taskDataset;
+    private static ArrayList<TaskModel> taskDataset;
 
 
     private boolean isTeacher, isStudent;
@@ -55,7 +56,6 @@ public class TaskListAdapter extends RecyclerView.Adapter<TaskListAdapter.ViewHo
     }
     public TaskListAdapter(ArrayList<TaskModel> dataSet) {
         this.taskDataset = dataSet;
-
 
     }
 
@@ -201,10 +201,16 @@ public class TaskListAdapter extends RecyclerView.Adapter<TaskListAdapter.ViewHo
     }
 
 
-
     // Return the size of your dataset (invoked by the layout manager)
     @Override
     public int getItemCount() {
         return taskDataset.size();
+    }
+
+    public void filterList(ArrayList<TaskModel> filteredList){
+        taskDataset.clear();  // Clear the existing data
+        taskDataset.addAll(filteredList);  // Add the filtered data
+        notifyDataSetChanged();
+
     }
 }

@@ -33,7 +33,7 @@ public class doneTasks extends AppCompatActivity {
         back = findViewById(R.id.back_arrow);
         donetasks = findViewById(R.id.doneTaskRv);
 
-        // Initialize Firebase Firestore
+        // WeInitialize Firebase as fStore
         fStore = FirebaseFirestore.getInstance();
 
         ArrayList<TaskModel> pendingTasks;
