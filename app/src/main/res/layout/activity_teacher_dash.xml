@@ -11,7 +11,7 @@
         android:id="@+id/view"
         android:layout_width="match_parent"
         android:layout_height="280dp"
-        android:background="@drawable/background_views">
+        android:background="@drawable/background_views_teacher">
     </View>
 
     <LinearLayout
@@ -61,7 +61,7 @@
             android:background="@drawable/image_view_background"
             android:elevation="30dp"
             android:layout_marginBottom="10dp"
-            android:backgroundTint="@color/green"
+            android:backgroundTint="@color/blue"
             android:gravity="center"
             android:orientation="vertical">
 
@@ -71,7 +71,7 @@
                 android:layout_height="match_parent"
                 android:elevation="10dp"
                 android:src="@drawable/dash_image1"
-                app:tint="@color/my_secondary">
+                app:tint="@color/yellow">
             </ImageView>
 
             <TextView
@@ -82,7 +82,7 @@
                 android:layout_marginBottom="5dp"
                 android:letterSpacing="0.1"
                 android:text="@string/teacher_dashboard"
-                android:textColor="@color/dark_green"
+                android:textColor="@color/black"
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
@@ -104,7 +104,8 @@
             android:layout_marginEnd="20dp"
             android:layout_marginBottom="20dp"
             android:columnCount="2"
-            android:rowCount="2">
+            android:rowCount="2"
+            tools:ignore="UselessParent">
 
             <androidx.cardview.widget.CardView
                 android:layout_width="wrap_content"
@@ -129,7 +130,7 @@
                         android:layout_height="100dp"
                         android:layout_gravity="center"
                         android:src="@drawable/task_icon"
-                        app:tint="@color/my_secondary" />
+                        app:tint="@color/my_primary" />
 
                     <TextView
                         android:layout_width="match_parent"
@@ -168,7 +169,7 @@
                         android:layout_height="100dp"
                         android:layout_gravity="center"
                         android:src="@drawable/appointment_icon"
-                        app:tint="@color/my_secondary" />
+                        app:tint="@color/my_primary" />
 
                     <TextView
                         android:layout_width="match_parent"
@@ -208,7 +209,7 @@
                         android:layout_height="100dp"
                         android:layout_gravity="center"
                         android:src="@drawable/done_task"
-                        app:tint="@color/my_secondary" />
+                        app:tint="@color/my_primary" />
 
                     <TextView
                         android:layout_width="match_parent"
@@ -247,7 +248,7 @@
                         android:layout_height="100dp"
                         android:layout_gravity="center"
                         android:src="@drawable/booked"
-                        app:tint="@color/my_secondary" />
+                        app:tint="@color/my_primary" />
 
                     <TextView
                         android:layout_width="match_parent"

@@ -80,7 +80,7 @@ public class teacherDash extends AppCompatActivity {
         teacher_appointment.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(teacherDash.this, teacherTask.class);
+                Intent intent = new Intent(teacherDash.this, teacherAppointment.class);
                 startActivity(intent);
             }
         });
@@ -89,7 +89,7 @@ public class teacherDash extends AppCompatActivity {
         booked.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(teacherDash.this, teacherTask.class);
+                Intent intent = new Intent(teacherDash.this, bookedAppointment.class);
                 startActivity(intent);
             }
         });

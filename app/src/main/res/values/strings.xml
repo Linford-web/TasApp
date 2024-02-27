@@ -42,4 +42,14 @@
     <string name="task_details">Task Details</string>
     <string name="show_task_name">Show Task Name</string>
     <string name="show_task_description">Show Task Description</string>
+    <string name="book">Book</string>
+    <string name="create_appointment">Create Appointment</string>
+    <string name="select_date">Select Date</string>
+    <string name="select_time">Select Time</string>
+    <string name="show_time">Show Time</string>
+    <string name="show_date">Show Date</string>
+    <string name="from">From</string>
+    <string name="end">End</string>
+    <string name="from_to">From : To</string>
+    <string name="all_appointments">All Appointments</string>
 </resources>

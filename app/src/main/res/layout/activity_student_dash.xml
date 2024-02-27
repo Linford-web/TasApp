@@ -70,7 +70,7 @@
                 android:layout_height="match_parent"
                 android:elevation="10dp"
                 android:src="@drawable/dash_image2"
-                app:tint="@color/my_secondary">
+                app:tint="@color/yellow">
             </ImageView>
 
             <TextView
@@ -81,7 +81,7 @@
                 android:layout_marginBottom="5dp"
                 android:letterSpacing="0.1"
                 android:text="@string/student_dashboard"
-                android:textColor="@color/dark_green"
+                android:textColor="@color/black"
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
@@ -102,7 +102,8 @@
             android:layout_marginTop="6dp"
             android:layout_marginEnd="20dp"
             android:columnCount="2"
-            android:rowCount="2">
+            android:rowCount="2"
+            tools:ignore="UselessParent">
 
             <androidx.cardview.widget.CardView
                 android:layout_width="wrap_content"

@@ -142,12 +142,12 @@ public class loginActivity extends AppCompatActivity {
 
     }
 
-    /*
+
     private void setLoggedInFlag() {
         SharedPreferences.Editor editor = sharedPref.edit();
         editor.putBoolean("LoggedIn",true);
         editor.apply();
-    }*/
+    }
 
     // check currently logged in user making them not login again if they exit app
     private void checkUserAccessLevel(String uid) {

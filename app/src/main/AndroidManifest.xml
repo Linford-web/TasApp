@@ -15,6 +15,15 @@
         android:theme="@style/Theme.TaskAppty"
         tools:targetApi="31">
         <activity
+            android:name=".bookedAppointment"
+            android:exported="false" />
+        <activity
+            android:name=".createAppointment"
+            android:exported="false" />
+        <activity
+            android:name=".teacherAppointment"
+            android:exported="false" />
+        <activity
             android:name=".viewTasks"
             android:exported="false" />
         <activity

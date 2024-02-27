@@ -54,10 +54,12 @@ public class TaskListAdapter extends RecyclerView.Adapter<TaskListAdapter.ViewHo
         }
 
     }
+
     public TaskListAdapter(ArrayList<TaskModel> dataSet) {
         this.taskDataset = dataSet;
 
     }
+
 
     // Create new views (invoked by the layout manager)
     @NonNull
@@ -95,7 +97,6 @@ public class TaskListAdapter extends RecyclerView.Adapter<TaskListAdapter.ViewHo
             viewHolder.taskStatusTv.setBackgroundColor(Color.parseColor("#0000FF"));
         }
 
-
         //click once to view the task details
         viewHolder.containerll.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -119,14 +120,16 @@ public class TaskListAdapter extends RecyclerView.Adapter<TaskListAdapter.ViewHo
                 PopupMenu popupMenu = new PopupMenu(v.getContext(), viewHolder.containerll);
                 popupMenu.inflate(R.menu.taskmenu);
 
+
                 if (isStudent) {
                     // Current user is a student
-                    popupMenu.getMenu().findItem(R.id.markDone).setVisible(true);
-                    popupMenu.getMenu().findItem(R.id.deleteMenu).setVisible(false);
-                } else {
-                    // Current user is a teacher
                     popupMenu.getMenu().findItem(R.id.markDone).setVisible(false);
                     popupMenu.getMenu().findItem(R.id.deleteMenu).setVisible(true);
+                    Log.e("popupmenu", "user not defined");
+                } else {
+                    // Current user is a teacher
+                    popupMenu.getMenu().findItem(R.id.markDone).setVisible(true);
+                    popupMenu.getMenu().findItem(R.id.deleteMenu).setVisible(false);
                 }
 
                 popupMenu.show();
@@ -150,7 +153,7 @@ public class TaskListAdapter extends RecyclerView.Adapter<TaskListAdapter.ViewHo
                                             taskDataset.remove(task);
                                             notifyDataSetChanged();
                                             // make the card disappear after being deleted
-                                            viewHolder.containerll.setVisibility(View.GONE);
+                                            //viewHolder.containerll.setVisibility(View.GONE);
 
                                         }
                                     });
@@ -164,7 +167,6 @@ public class TaskListAdapter extends RecyclerView.Adapter<TaskListAdapter.ViewHo
 
                             // Set the user ID who marked the task as done
                             completedTask.setDoneTaskUserId(FirebaseAuth.getInstance().getUid());
-
 
                             FirebaseFirestore.getInstance().collection("Tasks")
                                     .document(task.getTaskId())
@@ -199,7 +201,6 @@ public class TaskListAdapter extends RecyclerView.Adapter<TaskListAdapter.ViewHo
 
 
     }
-
 
     // Return the size of your dataset (invoked by the layout manager)
     @Override
