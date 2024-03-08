@@ -52,4 +52,13 @@
     <string name="end">End</string>
     <string name="from_to">From : To</string>
     <string name="all_appointments">All Appointments</string>
+    <string name="appointment_date">Appointment Date</string>
+    <string name="select_time_slot">Select Time Slot</string>
+    <string name="confirm_appointment">Confirm Appointment</string>
+    <string name="appointment_time">Appointment Time</string>
+    <string name="confirm">Confirm</string>
+    <string name="success_message_appointment">Appointment Confirmed :-)</string>
+    <string name="select_time_slot_available">Select Time Slot Available</string>
+    <string name="time_slot_span">9:00-9:30</string>
+    <string name="available">Available</string>
 </resources>

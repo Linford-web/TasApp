@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -16,49 +17,46 @@ import com.example.taskappty.Adapter.AppointmentAdapter;
 import com.example.taskappty.model.AppointmentModel;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
-import java.util.Objects;
 
-public class teacherAppointment extends AppCompatActivity {
+public class studentAppointment extends AppCompatActivity {
 
-
+    TextView back, uNameTv;
     RecyclerView recyclerView;
+    FirebaseFirestore fStore;
     CollectionReference appointmentsRef;
     ArrayList<AppointmentModel> appointmentList;
     AppointmentAdapter appointmentAdapter;
-    FloatingActionButton createAppointment;
-    TextView back, getName;
-
-    FirebaseFirestore fStore;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_teacher_appointment);
+        EdgeToEdge.enable(this);
+        setContentView(R.layout.activity_student_appointment);
 
-        recyclerView = findViewById(R.id.apptRv);
+
+
         back = findViewById(R.id.back_box);
-        getName = findViewById(R.id.get_user_name);
-        appointmentsRef = FirebaseFirestore.getInstance().collection("Appointments");
+        uNameTv = findViewById(R.id.get_user_name);
+        recyclerView = findViewById(R.id.showAppointmentsRv);
+        fStore = FirebaseFirestore.getInstance();
         appointmentList = new ArrayList<>();
         appointmentAdapter = new AppointmentAdapter(appointmentList);
-        createAppointment = findViewById(R.id.addAppointmentBtn);
+        recyclerView.setAdapter(appointmentAdapter);
+        appointmentsRef = FirebaseFirestore.getInstance().collection("Appointments");
 
-        fStore = FirebaseFirestore.getInstance();
+
 
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(appointmentAdapter);
-
 
         back.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -74,16 +72,6 @@ public class teacherAppointment extends AppCompatActivity {
         checkIncomingIntent();
 
         loadAppointmentsFromFirebase();
-
-        createAppointment.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent= new Intent(getApplicationContext(), createAppointment.class);
-                startActivity(intent);
-                finish();
-            }
-        });
-
     }
 
     private void checkIncomingIntent() {
@@ -114,36 +102,35 @@ public class teacherAppointment extends AppCompatActivity {
                                 if (document != null && document.exists()) {
                                     String userName = document.getString("name");
                                     // Set the user name in the TextView
-                                    getName.setText(userName);
+                                    uNameTv.setText(userName);
 
                                 } else {
                                     Log.d("TAG", "No such document");
                                 }
                             } else {
                                 Log.d("TAG", "get failed with ", task.getException());
-                                Toast.makeText(teacherAppointment.this, "Error fetching user name", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(studentAppointment.this, "Error fetching user name", Toast.LENGTH_SHORT).show();
                             }
                         }
                     });
         }
+
     }
 
     private void loadAppointmentsFromFirebase() {
-
         String appointmentId = FirebaseFirestore.getInstance().toString();
         if (!(appointmentId == null)) {
-            String currentUserId = Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getUid();
+
             CollectionReference appointmentCollection = fStore.collection("Appointments");
 
-            Query query = appointmentCollection.whereEqualTo("userId", currentUserId);
-            query.get()
+            appointmentCollection.get()
                     .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                         @Override
                         public void onComplete(@NonNull Task<QuerySnapshot> task) {
                             if (task.isSuccessful()) {
                                 appointmentList.clear(); // Clear existing data before adding new data
                                 for (QueryDocumentSnapshot document : task.getResult()) {
-                                    Log.d("TAGUS", document.getId() + " => " + document.getData());
+                                    Log.d("TAGTHEM", document.getId() + " => " + document.getData());
 
                                     AppointmentModel appointmentModel = document.toObject(AppointmentModel.class);
                                     appointmentModel.setAppointmentId("");
@@ -152,13 +139,13 @@ public class teacherAppointment extends AppCompatActivity {
                                 appointmentAdapter.notifyDataSetChanged(); // Notify the adapter after updating the dataset
                             } else {
                                 Log.d("TAG", "Error getting documents: ", task.getException());
-                                Toast.makeText(teacherAppointment.this, "Error fetching PENDING Tasks", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(studentAppointment.this, "Error fetching PENDING Tasks", Toast.LENGTH_SHORT).show();
                             }
                         }
                     });
 
-        }
 
+        }
 
     }
 }

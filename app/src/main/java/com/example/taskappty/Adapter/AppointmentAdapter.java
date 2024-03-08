@@ -1,5 +1,6 @@
-package com.example.taskappty;
+package com.example.taskappty.Adapter;
 
+import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,6 +12,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.taskappty.R;
+import com.example.taskappty.displayTimeGrid;
 import com.example.taskappty.model.AppointmentModel;
 
 import java.util.ArrayList;
@@ -19,7 +22,7 @@ public class AppointmentAdapter extends RecyclerView.Adapter<AppointmentAdapter.
 
     ArrayList<AppointmentModel> appointments;
 
-
+    // ViewHolder class to hold references to views in the item layout
     public static class ViewHolder extends RecyclerView.ViewHolder {
         TextView textViewName;
         TextView textViewEmail;
@@ -31,7 +34,7 @@ public class AppointmentAdapter extends RecyclerView.Adapter<AppointmentAdapter.
             textViewName = view.findViewById(R.id.textViewName);
             textViewEmail = view.findViewById(R.id.textViewEmail);
             bookButton = view.findViewById(R.id.bookButton);
-            container = (LinearLayout) view.findViewById(R.id.containerll);
+            container = view.findViewById(R.id.containerll);
         }
     }
 
@@ -54,7 +57,7 @@ public class AppointmentAdapter extends RecyclerView.Adapter<AppointmentAdapter.
 
         // Set data to views in the item layout
         holder.textViewName.setText(appointments.get(position).getTeacherName());
-        holder.textViewEmail.setText(appointments.get(position).getTeacherEmail());
+        holder.textViewEmail.setText(appointments.get(position).getDayOfWeek());
 
         //book button when clicked
         holder.bookButton.setOnClickListener(new View.OnClickListener() {
@@ -62,15 +65,22 @@ public class AppointmentAdapter extends RecyclerView.Adapter<AppointmentAdapter.
             public void onClick(View v) {
 
                 if (appointment != null) {
-                    //Intent intent = new Intent(v.getContext(), viewTasks.class);
-                    //intent.putExtra("TaskModel", String.valueOf(appointments.get(position)));
-                    //v.getContext().startActivity(intent);
+                    String appointmentDate = appointment.getDayOfWeek();
+                    String startTime = appointment.getStartTime();
+                    String endTime = appointment.getEndTime();
+
+                    Intent intent = new Intent(v.getContext(), displayTimeGrid.class);
+                    intent.putExtra("appointmentDate", appointmentDate);
+                    intent.putExtra("startTime", startTime);
+                    intent.putExtra("endTime", endTime);
+                    v.getContext().startActivity(intent);
 
                 } else {
                     // Log or display a message indicating that the task is null
                     Log.e("TaskListAdapter", "Clicked item has a null task");
                 }
             }
+
         });
 
     }

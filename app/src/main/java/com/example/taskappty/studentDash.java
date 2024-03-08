@@ -1,12 +1,12 @@
 package com.example.taskappty;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -79,7 +79,7 @@ public class studentDash extends AppCompatActivity {
         student_appointment.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(studentDash.this, studentTask.class);
+                Intent intent = new Intent(studentDash.this, studentAppointment.class);
                 startActivity(intent);
             }
         });
@@ -88,7 +88,7 @@ public class studentDash extends AppCompatActivity {
         booked.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(studentDash.this, studentDash.class);
+                Intent intent = new Intent(studentDash.this, bookedAppointment.class);
                 startActivity(intent);
             }
         });

@@ -15,6 +15,7 @@ import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
+import com.example.taskappty.Adapter.AppointmentAdapter;
 import com.example.taskappty.model.AppointmentModel;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.CollectionReference;
@@ -86,6 +87,7 @@ public class createAppointment extends AppCompatActivity {
                 createAppointment();
             }
         });
+
     }
 
     private void openDateDialog() {
@@ -107,7 +109,7 @@ public class createAppointment extends AppCompatActivity {
                 }, startHourOfDay, startMinute, true);
                 endTimeDialog.show();
             }
-        }, 12, 0, true);
+        }, 12, 00, true);
         timeSpanDialog.show();
     }
 
@@ -170,6 +172,7 @@ public class createAppointment extends AppCompatActivity {
                     Intent intent = new Intent(createAppointment.this, teacherAppointment.class);
                     intent.putExtra("appointmentModel", appointmentModel);
                     startActivity(intent);
+                    finish();
                     progressBar.setVisibility(View.GONE);
                 })
                 .addOnFailureListener(e -> {

@@ -1,11 +1,8 @@
-package com.example.taskappty;
+package com.example.taskappty.Adapter;
 
-import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
-import android.os.Parcelable;
 import android.util.Log;
-import android.view.ActionMode;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
@@ -18,18 +15,15 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.taskappty.R;
+import com.example.taskappty.doneTasks;
 import com.example.taskappty.model.TaskModel;
-import com.google.android.gms.tasks.OnCompleteListener;
+import com.example.taskappty.viewTasks;
 import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.protobuf.StringValue;
 
 import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
 
 public class TaskListAdapter extends RecyclerView.Adapter<TaskListAdapter.ViewHolder> {
 
@@ -47,9 +41,9 @@ public class TaskListAdapter extends RecyclerView.Adapter<TaskListAdapter.ViewHo
             super(view);
             // Define click listener for the ViewHolder's View
 
-            taskNameTv =(TextView) view.findViewById(R.id.taskNameTv);
-            taskStatusTv =(TextView) view.findViewById(R.id.taskStatusTv);
-            containerll = (LinearLayout) view.findViewById(R.id.containerll);
+            taskNameTv = view.findViewById(R.id.taskNameTv);
+            taskStatusTv = view.findViewById(R.id.taskStatusTv);
+            containerll =  view.findViewById(R.id.containerll);
 
         }
 

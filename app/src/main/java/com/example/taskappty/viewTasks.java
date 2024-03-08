@@ -52,6 +52,7 @@ public class viewTasks extends AppCompatActivity {
                 finish();
             }
         });
+
     }
     private void fetchAdditionalDetails(String taskId) {
         // Assuming you have a "Tasks" collection in your Firestore database

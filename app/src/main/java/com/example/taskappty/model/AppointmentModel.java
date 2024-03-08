@@ -1,4 +1,5 @@
 package com.example.taskappty.model;
+
 import android.os.Parcel;
 import android.os.Parcelable;
 

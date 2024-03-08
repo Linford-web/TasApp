@@ -13,6 +13,7 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.taskappty.Adapter.TaskListAdapter;
 import com.example.taskappty.model.TaskModel;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -84,6 +85,7 @@ public class teacherTask extends AppCompatActivity {
         });
 
         fetchPendingTasks();
+
     }
 
     private void filter(String newText) {

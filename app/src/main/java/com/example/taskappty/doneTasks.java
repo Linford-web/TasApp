@@ -9,8 +9,8 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.example.taskappty.Adapter.TaskListAdapter;
 import com.example.taskappty.model.TaskModel;
-import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
@@ -55,6 +55,7 @@ public class doneTasks extends AppCompatActivity {
 
         // Load done tasks from FireStore
         getDoneTasks();
+
     }
 
     private void getDoneTasks() {
