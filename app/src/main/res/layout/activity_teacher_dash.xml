@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/light_yellow"
+    android:background="@color/yellow"
     tools:context=".teacherDash">
 
     <View
@@ -37,7 +37,7 @@
                 android:layout_weight="1"
                 android:letterSpacing="0.1"
                 android:text="@string/t_dash"
-                android:textColor="@color/yellow"
+                android:textColor="@color/my_primary"
                 android:textSize="30sp"
                 android:textStyle="bold" />
 
@@ -51,7 +51,7 @@
                 android:layout_height="match_parent"
                 android:layout_gravity="end"
                 android:src="@drawable/menu_icon"
-                app:tint="@color/red" />
+                app:tint="@color/red"/>
         </LinearLayout>
 
 
@@ -61,7 +61,7 @@
             android:background="@drawable/image_view_background"
             android:elevation="30dp"
             android:layout_marginBottom="10dp"
-            android:backgroundTint="@color/blue"
+            android:backgroundTint="@color/green"
             android:gravity="center"
             android:orientation="vertical">
 
@@ -71,7 +71,8 @@
                 android:layout_height="match_parent"
                 android:elevation="10dp"
                 android:src="@drawable/dash_image1"
-                app:tint="@color/yellow">
+                app:tint="@color/my_secondary">
+
             </ImageView>
 
             <TextView
@@ -81,6 +82,7 @@
                 android:layout_marginStart="10dp"
                 android:layout_marginBottom="5dp"
                 android:letterSpacing="0.1"
+                android:visibility="invisible"
                 android:text="@string/teacher_dashboard"
                 android:textColor="@color/black"
                 android:textSize="16sp"
@@ -130,7 +132,7 @@
                         android:layout_height="100dp"
                         android:layout_gravity="center"
                         android:src="@drawable/task_icon"
-                        app:tint="@color/my_primary" />
+                        app:tint="@color/my_secondary" />
 
                     <TextView
                         android:layout_width="match_parent"
@@ -169,7 +171,7 @@
                         android:layout_height="100dp"
                         android:layout_gravity="center"
                         android:src="@drawable/appointment_icon"
-                        app:tint="@color/my_primary" />
+                        app:tint="@color/my_secondary" />
 
                     <TextView
                         android:layout_width="match_parent"
@@ -209,7 +211,7 @@
                         android:layout_height="100dp"
                         android:layout_gravity="center"
                         android:src="@drawable/done_task"
-                        app:tint="@color/my_primary" />
+                        app:tint="@color/my_secondary" />
 
                     <TextView
                         android:layout_width="match_parent"
@@ -248,7 +250,7 @@
                         android:layout_height="100dp"
                         android:layout_gravity="center"
                         android:src="@drawable/booked"
-                        app:tint="@color/my_primary" />
+                        app:tint="@color/my_secondary" />
 
                     <TextView
                         android:layout_width="match_parent"

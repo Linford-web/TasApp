@@ -54,7 +54,6 @@ public class TaskListAdapter extends RecyclerView.Adapter<TaskListAdapter.ViewHo
 
     }
 
-
     // Create new views (invoked by the layout manager)
     @NonNull
     @Override
@@ -106,7 +105,6 @@ public class TaskListAdapter extends RecyclerView.Adapter<TaskListAdapter.ViewHo
                 }
             }
         });
-
 
         viewHolder.containerll.setOnLongClickListener(new View.OnLongClickListener() {
             @Override

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/light_yellow"
+    android:background="@color/yellow"
     tools:context=".AddTask">
 
     <LinearLayout
@@ -79,6 +79,7 @@
                     android:background="@drawable/edit_text_background"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
                     android:padding="15dp"/>
                 <TextView
                     android:layout_width="wrap_content"
@@ -94,11 +95,12 @@
                 <EditText
                     android:id="@+id/taskDescription"
                     android:layout_width="match_parent"
-                    android:layout_height="100dp"
+                    android:layout_height="80dp"
                     android:layout_marginTop="7dp"
                     android:textAlignment="viewStart"
                     android:background="@drawable/edit_text_background"
                     android:hint="@string/task_description"
+                    android:layout_margin="10dp"
                     android:padding="15dp" />
 
                 <Button
@@ -153,7 +155,6 @@
             </LinearLayout>
 
         </LinearLayout>
-
 
     </LinearLayout>
     <View

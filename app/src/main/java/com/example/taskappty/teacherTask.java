@@ -1,17 +1,16 @@
 package com.example.taskappty;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.SearchView;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.taskappty.Adapter.TaskListAdapter;
 import com.example.taskappty.model.TaskModel;
@@ -34,7 +33,7 @@ public class teacherTask extends AppCompatActivity {
 
     TaskListAdapter taskListAdapter;
     CircleImageView userprofile;
-    SearchView searchView;
+
     FirebaseFirestore fStore;
     TextView userNameTv;
 
@@ -46,7 +45,6 @@ public class teacherTask extends AppCompatActivity {
         fStore = FirebaseFirestore.getInstance();
 
         taskRv=findViewById(R.id.taskListRv);
-        searchView = findViewById(R.id.search_view);
         userprofile = findViewById(R.id.userProfileTv);
         userNameTv = findViewById(R.id.get_user_name);
 
@@ -61,19 +59,6 @@ public class teacherTask extends AppCompatActivity {
         taskRv.setLayoutManager(layoutManager);
         taskRv.setAdapter(taskListAdapter);
 
-        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
-            @Override
-            public boolean onQueryTextSubmit(String query) {
-                return false;
-            }
-
-            @Override
-            public boolean onQueryTextChange(String newText) {
-
-                 filter(newText);
-                return true;
-            }
-        });
 
         // Add Task Button direct Teacher to Add Task Activity
         findViewById(R.id.add_taskFBN).setOnClickListener(new View.OnClickListener() {
@@ -87,19 +72,7 @@ public class teacherTask extends AppCompatActivity {
         fetchPendingTasks();
 
     }
-
-    private void filter(String newText) {
-        ArrayList<TaskModel> filteredList = new ArrayList<>();
-        for (TaskModel item : dataList){
-            if (item.getTaskName().toLowerCase().contains(newText.toLowerCase())){
-                filteredList.add(item);
-            }
-        }
-
-        taskListAdapter.filterList(filteredList);
-
-    }
-
+    
     private void fetchPendingTasks() {
         String userId = FirebaseAuth.getInstance().getUid();
 

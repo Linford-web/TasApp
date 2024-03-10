@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -23,6 +24,7 @@ public class confirmAppointment extends AppCompatActivity {
 
     TextView teacherNameTextView, teacherEmailTextView, dateTextView, timeSlotTextView, userIdTextView;
     ProgressBar progressBar;
+    ImageView backButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +38,16 @@ public class confirmAppointment extends AppCompatActivity {
         timeSlotTextView = findViewById(R.id.appointment_time);
         userIdTextView = findViewById(R.id.creator_id);
         progressBar = findViewById(R.id.progressbar);
+        backButton = findViewById(R.id.back_arrow);
+
+
+        // Handle the back button click
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
         // Retrieve data from the intent
         Intent intent = getIntent();

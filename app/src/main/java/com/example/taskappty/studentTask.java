@@ -1,16 +1,15 @@
 package com.example.taskappty;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.SearchView;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.taskappty.Adapter.TaskListAdapter;
 import com.example.taskappty.model.TaskModel;
@@ -31,7 +30,6 @@ public class studentTask extends AppCompatActivity {
         TextView back;
         ArrayList<TaskModel> pendingTasks;
         TaskListAdapter taskListAdapter;
-        SearchView searchView;
         FirebaseFirestore fStore;
         FirebaseAuth fAuth;
 
@@ -45,7 +43,6 @@ public class studentTask extends AppCompatActivity {
             fAuth = FirebaseAuth.getInstance();
 
             userNameTv = findViewById(R.id.get_user_name);
-            searchView = findViewById(R.id.search_view);
             back = findViewById(R.id.back_box);
 
 
@@ -62,21 +59,6 @@ public class studentTask extends AppCompatActivity {
             // fetch all pending tasks
             fetchPendingTasks();
 
-            searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
-                @Override
-                public boolean onQueryTextSubmit(String query) {
-
-                    return false;
-                }
-
-                @Override
-                public boolean onQueryTextChange(String newText) {
-                    filter(newText);
-
-                    return true;
-                }
-            });
-
             // set the floating back button to return user to Dash
             back.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -90,30 +72,6 @@ public class studentTask extends AppCompatActivity {
 
         }
 
-    private void filter(String newText) {
-
-            /*
-        if (newText.isEmpty()) {
-            // If search text is empty, show all tasks
-            taskListAdapter.filterList(new ArrayList<>(pendingTasks));
-        } else {
-            // Filter the tasks based on the search text
-            ArrayList<TaskModel> filteredList = new ArrayList<>();
-            for (TaskModel item : pendingTasks) {
-                if (item.getTaskName().toLowerCase().contains(newText.toLowerCase())) {
-                    filteredList.add(item);
-                }
-            }*/
-
-            ArrayList<TaskModel> filteredList = new ArrayList<>();
-            for (TaskModel item : pendingTasks){
-                if (item.getTaskName().toLowerCase().contains(newText.toLowerCase())){
-                    filteredList.add(item);
-                }
-            }
-
-            taskListAdapter.filterList(filteredList);
-    }
 
     private void fetchPendingTasks() {
 
