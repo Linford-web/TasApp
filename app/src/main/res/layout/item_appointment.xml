@@ -10,7 +10,7 @@
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:cardCornerRadius="10dp"
+        app:cardCornerRadius="13dp"
         android:background="@color/light_yellow">
 
         <LinearLayout
@@ -22,7 +22,6 @@
                 android:layout_width="65dp"
                 android:layout_height="match_parent"
                 android:layout_marginStart="4dp"
-                android:layout_marginTop="4dp"
                 android:layout_marginEnd="4dp"
                 android:src="@drawable/profile_image"/>
 
@@ -39,16 +38,16 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="4dp"
                     android:text="@string/name"
-                    android:textSize="20sp"
+                    android:textSize="18sp"
                     android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/textViewEmail"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/email"
+                    android:text="@string/date"
                     android:textColor="@android:color/darker_gray"
-                    android:textSize="20sp" />
+                    android:textSize="15sp" />
 
             </LinearLayout>
 
@@ -56,7 +55,7 @@
                 android:id="@+id/bookButton"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_marginTop="8dp"
+                android:layout_margin="5dp"
                 android:text="@string/book" />
 
         </LinearLayout>

@@ -46,7 +46,6 @@ public class studentDash extends AppCompatActivity {
 
         }
 
-
         // direct user to Menu
         smenu.setOnClickListener(new View.OnClickListener() {
             @Override

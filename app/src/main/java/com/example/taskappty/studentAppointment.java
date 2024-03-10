@@ -35,13 +35,12 @@ public class studentAppointment extends AppCompatActivity {
     ArrayList<AppointmentModel> appointmentList;
     AppointmentAdapter appointmentAdapter;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_student_appointment);
-
-
 
         back = findViewById(R.id.back_box);
         uNameTv = findViewById(R.id.get_user_name);
@@ -52,8 +51,7 @@ public class studentAppointment extends AppCompatActivity {
         recyclerView.setAdapter(appointmentAdapter);
         appointmentsRef = FirebaseFirestore.getInstance().collection("Appointments");
 
-
-
+        // Set up the RecyclerView
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(appointmentAdapter);
@@ -72,6 +70,7 @@ public class studentAppointment extends AppCompatActivity {
         checkIncomingIntent();
 
         loadAppointmentsFromFirebase();
+
     }
 
     private void checkIncomingIntent() {
@@ -144,8 +143,8 @@ public class studentAppointment extends AppCompatActivity {
                         }
                     });
 
-
         }
 
     }
+
 }

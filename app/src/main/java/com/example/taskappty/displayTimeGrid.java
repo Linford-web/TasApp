@@ -15,7 +15,6 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.taskappty.Adapter.TimeSlotAdapter;
-import com.example.taskappty.model.AppointmentModel;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.text.SimpleDateFormat;
@@ -32,6 +31,7 @@ public class displayTimeGrid extends AppCompatActivity {
 
     ImageView back;
     FirebaseFirestore fStore;
+    String timeSlot;
 
 
     @Override
@@ -58,11 +58,14 @@ public class displayTimeGrid extends AppCompatActivity {
         String appointmentDate = intent.getStringExtra("appointmentDate");
         String startTime = intent.getStringExtra("startTime");
         String endTime = intent.getStringExtra("endTime");
+        String teacherName = intent.getStringExtra("teacherName");
+        String teacherEmail = intent.getStringExtra("teacherEmail");
+        String userId = intent.getStringExtra("userId");
 
         // Set appointment date
         AppointmentDate.setText(appointmentDate);
 
-        // Initialize FirebaseFirestore
+        // Initialize FirebaseFireStore
         fStore = FirebaseFirestore.getInstance();
 
         // Generate time slots
@@ -83,46 +86,40 @@ public class displayTimeGrid extends AppCompatActivity {
                 View child = rv.findChildViewUnder(e.getX(), e.getY());
                 if (child != null) {
                     int position = rv.getChildAdapterPosition(child);
-                    String selectedTimeSlot = timeSlots.get(position);
+                    timeSlot = timeSlots.get(position);
+                    Toast.makeText(displayTimeGrid.this, "Selected time: " + timeSlot, Toast.LENGTH_SHORT).show();
+                    // Create an intent to start ConfirmAppointmentActivity
+                    Intent intent = new Intent(displayTimeGrid.this, confirmAppointment.class);
 
-                    // Create an instance of AppointmentModel
-                    AppointmentModel appointment = new AppointmentModel();
+                    // Pass the selected time slot as an extra to the ConfirmAppointmentActivity
+                    intent.putExtra("selectedTimeSlot", timeSlot);
 
+                    // Add any additional data you want to pass to ConfirmAppointmentActivity
+                    intent.putExtra("teacherName", teacherName);
+                    intent.putExtra("teacherEmail", teacherEmail);
+                    intent.putExtra("appointmentDate", appointmentDate);
+                    intent.putExtra("userId", userId);
 
-                        // Get the necessary data from the Appointment collection
-                        String teacherName = appointment.getTeacherName();
-                        String teacherEmail = appointment.getTeacherEmail();
-                        String appointmentDate = appointment.getDayOfWeek();
+                    // Start ConfirmAppointmentActivity
+                    startActivity(intent);
 
-                        // Create an intent to launch the confirmAppointment activity
-
-                        Intent intent = new Intent(displayTimeGrid.this, confirmAppointment.class);
-
-                        // Pass the data as extras
-                        //intent.putExtra("teacherName", teacherName);
-                        //intent.putExtra("teacherEmail", teacherEmail);
-                        //intent.putExtra("appointmentDate", appointmentDate);
-                        //intent.putExtra("appointment", appointment);
-                        intent.putExtra("selectedTimeSlot", selectedTimeSlot);
-                        // Start the activity
-                        startActivity(intent);
-
-                        Toast.makeText(displayTimeGrid.this, "Selected time: " + selectedTimeSlot, Toast.LENGTH_SHORT).show();
-                        return true;
-
-
+                    return true;
                 }
                 return false;
             }
 
             @Override
             public void onTouchEvent(@NonNull RecyclerView rv, @NonNull MotionEvent e) {
+
             }
 
             @Override
             public void onRequestDisallowInterceptTouchEvent(boolean disallowIntercept) {
+
             }
         });
+
+
     }
 
 

@@ -61,4 +61,8 @@
     <string name="select_time_slot_available">Select Time Slot Available</string>
     <string name="time_slot_span">9:00-9:30</string>
     <string name="available">Available</string>
+    <string name="my_appointments">My Appointments</string>
+    <string name="booked_appointments">Booked Appointments</string>
+    <string name="selected_time">Selected Time</string>
+    <string name="creator_id">Creator Id</string>
 </resources>

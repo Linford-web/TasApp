@@ -11,13 +11,13 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="10dp"
         android:orientation="vertical">
 
         <LinearLayout
             android:id="@+id/top_bar_nav"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="10dp"
             android:orientation="horizontal"
             android:padding="7dp">
 
@@ -48,13 +48,41 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:gravity="center">
+            android:background="@drawable/slide_under_view"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/success_background"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/success_icon"
+                    app:tint="@color/light_green" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:letterSpacing="0.1"
+                    android:text="@string/success_message_appointment"
+                    android:textAlignment="center"
+                    android:textColor="@color/light_green"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+
             <LinearLayout
                 android:id="@+id/appointment_details"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
                 android:orientation="vertical">
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -72,8 +100,9 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
-                        android:text="@string/teacher_name"
+                        android:background="@drawable/enter_details_background"
                         android:textColor="@color/black"
+                        android:text="@string/name"
                         android:textSize="18sp"
                         android:textStyle="bold" />
                 </LinearLayout>
@@ -95,8 +124,9 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
-                        android:text="@string/email"
+                        android:background="@drawable/enter_details_background"
                         android:textColor="@color/black"
+                        android:text="@string/email"
                         android:textSize="18sp"
                         android:textStyle="bold" />
                 </LinearLayout>
@@ -118,7 +148,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
-                        android:text="@string/appointment_date"
+                        android:background="@drawable/enter_details_background"
+                        android:text="@string/date"
                         android:textColor="@color/black"
                         android:textSize="18sp"
                         android:textStyle="bold" />
@@ -141,50 +172,32 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
-                        android:text="@string/appointment_time"
+                        android:background="@drawable/enter_details_background"
                         android:textColor="@color/black"
+                        android:text="@string/selected_time"
                         android:textSize="18sp"
                         android:textStyle="bold" />
                 </LinearLayout>
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/successLayout"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:visibility="gone"
-                android:elevation="50dp"
-                android:background="@drawable/success_background"
-                android:orientation="vertical">
-                <ImageView
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:layout_marginTop="10dp"
-                    android:src="@drawable/success_icon"
-                    app:tint="@color/green"
-                    android:layout_gravity="center"/>
 
                 <TextView
-                    android:layout_width="match_parent"
+                    android:id="@+id/creator_id"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginBottom="30dp"
-                    android:letterSpacing="0.09"
-                    android:text="@string/success_message_appointment"
-                    android:textAlignment="center"
-                    android:textColor="@color/green"
-                    android:textSize="20sp"
-                    android:textStyle="normal" />
-
+                    android:text="@string/creator_id"
+                    android:textColor="@color/red"
+                    android:textSize="15sp"
+                    android:layout_marginStart="10dp"
+                    android:letterSpacing="0.1"
+                    android:textStyle="bold"/>
             </LinearLayout>
 
             <ProgressBar
                 android:id="@+id/progressbar"
-                android:visibility="gone"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginTop="10dp"/>
+                android:layout_marginTop="10dp"
+                android:visibility="gone" />
 
         </LinearLayout>
 

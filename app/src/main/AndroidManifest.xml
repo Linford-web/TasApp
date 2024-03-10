@@ -15,10 +15,10 @@
         android:theme="@style/Theme.TaskAppty"
         tools:targetApi="31">
         <activity
-            android:name=".studentAppointment"
+            android:name=".confirmAppointment"
             android:exported="false" />
         <activity
-            android:name=".confirmAppointment"
+            android:name=".studentAppointment"
             android:exported="false" />
         <activity
             android:name=".displayTimeGrid"

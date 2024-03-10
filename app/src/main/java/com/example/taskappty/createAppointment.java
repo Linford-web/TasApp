@@ -1,7 +1,5 @@
 package com.example.taskappty;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
 import android.content.Intent;
@@ -14,6 +12,8 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.taskappty.Adapter.AppointmentAdapter;
 import com.example.taskappty.model.AppointmentModel;
@@ -131,6 +131,7 @@ public class createAppointment extends AppCompatActivity {
         String teacherName = editTextName.getText().toString().trim();
         String teacherEmail = editTextEmail.getText().toString().trim();
         String dayOfWeek = datePicker.getText().toString();
+        String appointmentId = fStore.collection("Appointments").document().getId();
 
 
         // Ensure that both start time and end time are selected
@@ -149,7 +150,7 @@ public class createAppointment extends AppCompatActivity {
         fAuth = FirebaseAuth.getInstance();
         String  userId = Objects.requireNonNull(fAuth.getCurrentUser()).getUid();
 
-        AppointmentModel appointmentModel = new AppointmentModel(teacherName, dayOfWeek, teacherEmail, startTime, endTime);
+        AppointmentModel appointmentModel = new AppointmentModel(teacherName, dayOfWeek, teacherEmail, startTime, endTime, appointmentId, userId);
 
         Map<String, Object> appointmentData = new HashMap<>();
         appointmentData.put("teacherName", appointmentModel.getTeacherName());
@@ -157,13 +158,12 @@ public class createAppointment extends AppCompatActivity {
         appointmentData.put("teacherEmail", appointmentModel.getTeacherEmail());
         appointmentData.put("startTime", appointmentModel.getStartTime());
         appointmentData.put("endTime", appointmentModel.getEndTime());
-
         // Include userId in the appointment data
         appointmentData.put("userId", userId);
 
         appointmentsCollection.add(appointmentData)
                 .addOnSuccessListener(documentReference -> {
-                    String appointmentId = documentReference.getId();
+                    //String appointmentId = documentReference.getId();
                     appointmentModel.setAppointmentId(appointmentId);
                     Toast.makeText(createAppointment.this, "Appointment Time Added Successfully", Toast.LENGTH_SHORT).show();
                     //Notify The Adapter when about the new data

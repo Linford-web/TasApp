@@ -18,6 +18,7 @@ public class TimeSlotAdapter extends RecyclerView.Adapter<TimeSlotAdapter.TimeSl
     List<String> timeSlots;
     String selectedTimeSlot;
 
+
     public TimeSlotAdapter(Context context, List<String> timeSlots) {
         this.context = context;
         this.timeSlots = timeSlots;
@@ -40,19 +41,13 @@ public class TimeSlotAdapter extends RecyclerView.Adapter<TimeSlotAdapter.TimeSl
         holder.tvTimeSlot.setText(timeSlot);
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
+                @Override
             public void onClick(View v) {
                 selectedTimeSlot = timeSlot;
+                notifyDataSetChanged();
+
             }
         });
-
-
-        // Ensure that the selected time slot is highlighted
-        if (selectedTimeSlot != null && selectedTimeSlot.equals(timeSlot)) {
-            holder.itemView.setBackgroundResource(R.drawable.selected_timeslot_background);
-        }
-        // Ensure that when a time slot is clicked the available time text changes to booked
-
 
     }
 
@@ -63,6 +58,7 @@ public class TimeSlotAdapter extends RecyclerView.Adapter<TimeSlotAdapter.TimeSl
 
     public class TimeSlotViewHolder extends RecyclerView.ViewHolder {
         TextView tvTimeSlot;
+        TextView tvAppointmentStatus;
 
         public TimeSlotViewHolder(@NonNull View itemView) {
             super(itemView);

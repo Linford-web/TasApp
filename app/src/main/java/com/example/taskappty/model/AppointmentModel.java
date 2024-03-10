@@ -5,22 +5,31 @@ import android.os.Parcelable;
 
 public class AppointmentModel implements Parcelable{
 
-    String  dayOfWeek, teacherEmail,teacherName, appointmentId, startTime, endTime;
+    String  dayOfWeek, teacherEmail,teacherName, appointmentId, startTime, endTime, userId;
 
     public AppointmentModel(){
 
     }
 
-    public AppointmentModel(String teacherName, String dayOfWeek, String teacherEmail, String startTime, String endTime) {
+    public AppointmentModel(String teacherName, String dayOfWeek, String teacherEmail, String startTime, String endTime, String appointmentId, String userId) {
         this.appointmentId = appointmentId;
         this.teacherName = teacherName;
         this.dayOfWeek = dayOfWeek;
         this.teacherEmail = teacherEmail;
         this.startTime = startTime;
         this.endTime = endTime;
+        this.userId = userId;
     }
 
-    public AppointmentModel(String teacherName, String teacherEmail, String dayOfWeek, String timeSpan, String appointmentId, String startTime, String endTime) {
+    public AppointmentModel(String teacherName, String teacherEmail, String dayOfWeek, String timeSpan, String appointmentId, String startTime, String endTime, String userId) {
+    }
+
+    public String getUserId() {
+        return userId;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
     }
 
     public String getDayOfWeek() {
@@ -107,4 +116,5 @@ public class AppointmentModel implements Parcelable{
         dest.writeString(endTime);
         dest.writeString(appointmentId);
     }
+
 }

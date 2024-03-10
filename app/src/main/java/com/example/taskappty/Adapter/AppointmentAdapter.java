@@ -22,7 +22,13 @@ public class AppointmentAdapter extends RecyclerView.Adapter<AppointmentAdapter.
 
     ArrayList<AppointmentModel> appointments;
 
+    public void setFilteredList(ArrayList<AppointmentModel> filteredAppointments) {
+        this.appointments = filteredAppointments;
+        notifyDataSetChanged();
+    }
+
     // ViewHolder class to hold references to views in the item layout
+
     public static class ViewHolder extends RecyclerView.ViewHolder {
         TextView textViewName;
         TextView textViewEmail;
@@ -68,11 +74,19 @@ public class AppointmentAdapter extends RecyclerView.Adapter<AppointmentAdapter.
                     String appointmentDate = appointment.getDayOfWeek();
                     String startTime = appointment.getStartTime();
                     String endTime = appointment.getEndTime();
+                    String teacherName = appointment.getTeacherName();
+                    String teacherEmail = appointment.getTeacherEmail();
+                    String userId = appointment.getUserId();
 
                     Intent intent = new Intent(v.getContext(), displayTimeGrid.class);
                     intent.putExtra("appointmentDate", appointmentDate);
                     intent.putExtra("startTime", startTime);
                     intent.putExtra("endTime", endTime);
+                    intent.putExtra("teacherName", teacherName);
+                    intent.putExtra("teacherEmail", teacherEmail);
+                    intent.putExtra("userId", userId);
+
+                    // Start the new activity
                     v.getContext().startActivity(intent);
 
                 } else {

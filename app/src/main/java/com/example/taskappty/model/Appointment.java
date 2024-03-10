@@ -1,17 +1,27 @@
 package com.example.taskappty.model;
 
-public class Appointment {
+public class Appointment  {
 
-    private String date, time, id, teacherName, teacherEmail;
+    private String date, time, id, teacherName, teacherEmail, markedBy;
 
-    public Appointment(String date, String time, String id, String teacherName, String teacherEmail) {
+    public Appointment(String date, String time, String id, String teacherName, String teacherEmail, String markedBy) {
         this.date = date;
         this.time = time;
         this.id = id;
         this.teacherName = teacherName;
         this.teacherEmail = teacherEmail;
+        this.markedBy = markedBy;
     }
+
     public Appointment() {
+    }
+
+    public String getMarkedBy() {
+        return markedBy;
+    }
+
+    public void setMarkedBy(String markedBy) {
+        this.markedBy = markedBy;
     }
 
     public String getDate() {
@@ -53,4 +63,6 @@ public class Appointment {
     public void setTeacherEmail(String teacherEmail) {
         this.teacherEmail = teacherEmail;
     }
+
+
 }
