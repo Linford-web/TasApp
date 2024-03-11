@@ -43,9 +43,9 @@ public class TimeSlotAdapter extends RecyclerView.Adapter<TimeSlotAdapter.TimeSl
         holder.itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
             public void onClick(View v) {
+
                 selectedTimeSlot = timeSlot;
                 notifyDataSetChanged();
-
             }
         });
 

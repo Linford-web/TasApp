@@ -11,11 +11,17 @@ import android.widget.Toast;
 import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.taskappty.Adapter.TimeSlotAdapter;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.Query;
+import com.google.firebase.firestore.QuerySnapshot;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -23,6 +29,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
+import java.util.Objects;
 
 public class displayTimeGrid extends AppCompatActivity {
 
@@ -32,6 +39,7 @@ public class displayTimeGrid extends AppCompatActivity {
     ImageView back;
     FirebaseFirestore fStore;
     String timeSlot;
+    List<String> timeSlots = new ArrayList<>();
 
 
     @Override
@@ -87,26 +95,24 @@ public class displayTimeGrid extends AppCompatActivity {
                 if (child != null) {
                     int position = rv.getChildAdapterPosition(child);
                     timeSlot = timeSlots.get(position);
-                    Toast.makeText(displayTimeGrid.this, "Selected time: " + timeSlot, Toast.LENGTH_SHORT).show();
-                    // Create an intent to start ConfirmAppointmentActivity
-                    Intent intent = new Intent(displayTimeGrid.this, confirmAppointment.class);
+                        // Update the UI for the selected time slot
+                        updateTimeSlotUI(child);
+                        Toast.makeText(displayTimeGrid.this, "Selected time: " + timeSlot, Toast.LENGTH_SHORT).show();
+                        // Create an intent to start ConfirmAppointmentActivity
+                        Intent intent = new Intent(displayTimeGrid.this, confirmAppointment.class);
+                        // Pass the selected time slot as an extra to the ConfirmAppointmentActivity
+                        intent.putExtra("selectedTimeSlot", timeSlot);
+                        // Add any additional data you want to pass to ConfirmAppointmentActivity
+                        intent.putExtra("teacherName", teacherName);
+                        intent.putExtra("teacherEmail", teacherEmail);
+                        intent.putExtra("appointmentDate", appointmentDate);
+                        intent.putExtra("userId", userId);
+                        // Start ConfirmAppointmentActivity
+                        startActivity(intent);
 
-                    // Pass the selected time slot as an extra to the ConfirmAppointmentActivity
-                    intent.putExtra("selectedTimeSlot", timeSlot);
-
-                    // Add any additional data you want to pass to ConfirmAppointmentActivity
-                    intent.putExtra("teacherName", teacherName);
-                    intent.putExtra("teacherEmail", teacherEmail);
-                    intent.putExtra("appointmentDate", appointmentDate);
-                    intent.putExtra("userId", userId);
-
-                    // Start ConfirmAppointmentActivity
-                    startActivity(intent);
-
+                    }
                     return true;
                 }
-                return false;
-            }
 
             @Override
             public void onTouchEvent(@NonNull RecyclerView rv, @NonNull MotionEvent e) {
@@ -119,9 +125,77 @@ public class displayTimeGrid extends AppCompatActivity {
             }
         });
 
-
     }
 
+    private void updateTimeSlotUI(View child) {
+
+        // Add your logic here to change the color and text of the selected time slot
+        // TextView in the layout, you can update its text
+        TextView textView = child.findViewById(R.id.txt_appointmentStatus);
+        if (textView != null) {
+            // Set the text of the TextView to "Booked"
+            textView.setText("Booked");
+        }
+        // You may also want to disable further clicks on the time slot
+        Objects.requireNonNull(textView).setEnabled(false);
+
+        // change the background color of the time slot
+        child.setBackgroundColor(ContextCompat.getColor(displayTimeGrid.this, R.color.orange));
+        // disable the view to prevent further clicks
+        child.setEnabled(false);
+    }
+
+    private boolean isTimeSlotBooked(int position) {
+
+        // Get the list of booked time slots from Firestore
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+        CollectionReference bookedAppointmentsCollection = db.collection("bookedAppointments");
+
+        // Get the time slot at the given position
+        String selectedTimeSlot = timeSlots.get(position);
+
+        // Query the bookedAppointmentsCollection to check if the selected time slot is booked
+        Query query = bookedAppointmentsCollection.whereEqualTo("selectedTimeSlot", selectedTimeSlot);
+
+        // Perform the query asynchronously
+        query.get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                if (task.isSuccessful()) {
+                    // Check if the query returned any results
+                    boolean isBooked = !task.getResult().isEmpty();
+
+                    // Now you can handle the result as needed
+                    handleBookingResult(isBooked);
+                } else {
+                    // Handle the error if the query fails
+                    handleBookingError(task.getException());
+                }
+            }
+        });
+        return false;
+    }
+
+
+    // Handle the booking result (e.g., update UI)
+    private void handleBookingResult(boolean isBooked) {
+        if (isBooked) {
+            // The time slot is booked
+            // Implement the logic to notify the user or take necessary action
+            // You might disable the time slot or show a message to the user
+        } else {
+            // The time slot is not booked
+            // Continue allowing the user to select the time slot
+            // Implement the logic as needed
+        }
+    }
+
+    // Handle the booking error (e.g., log the error)
+    private void handleBookingError(Exception exception) {
+        exception.printStackTrace();
+        // Handle the error as needed (e.g., log, show error message)
+
+    }
 
     private List<String> generateTimeSlots(String startTime, String endTime) {
         List<String> timeSlots = new ArrayList<>();

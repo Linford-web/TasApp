@@ -97,6 +97,7 @@ public class AppointmentAdapter extends RecyclerView.Adapter<AppointmentAdapter.
 
         });
 
+
     }
 
     // New method to add an appointment

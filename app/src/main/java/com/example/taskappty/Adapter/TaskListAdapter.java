@@ -112,7 +112,9 @@ public class TaskListAdapter extends RecyclerView.Adapter<TaskListAdapter.ViewHo
                 PopupMenu popupMenu = new PopupMenu(v.getContext(), viewHolder.containerll);
                 popupMenu.inflate(R.menu.taskmenu);
 
-
+                popupMenu.getMenu().findItem(R.id.markDone).setVisible(true);
+                popupMenu.getMenu().findItem(R.id.deleteMenu).setVisible(true);
+                /*
                 if (isStudent) {
                     // Current user is a student
                     popupMenu.getMenu().findItem(R.id.markDone).setVisible(false);
@@ -121,8 +123,8 @@ public class TaskListAdapter extends RecyclerView.Adapter<TaskListAdapter.ViewHo
                 } else {
                     // Current user is a teacher
                     popupMenu.getMenu().findItem(R.id.markDone).setVisible(true);
-                    popupMenu.getMenu().findItem(R.id.deleteMenu).setVisible(false);
-                }
+                    popupMenu.getMenu().findItem(R.id.deleteMenu).setVisible(t);
+                }*/
 
                 popupMenu.show();
 
@@ -145,7 +147,7 @@ public class TaskListAdapter extends RecyclerView.Adapter<TaskListAdapter.ViewHo
                                             taskDataset.remove(task);
                                             notifyDataSetChanged();
                                             // make the card disappear after being deleted
-                                            //viewHolder.containerll.setVisibility(View.GONE);
+                                            viewHolder.containerll.setVisibility(View.GONE);
 
                                         }
                                     });
@@ -200,10 +202,4 @@ public class TaskListAdapter extends RecyclerView.Adapter<TaskListAdapter.ViewHo
         return taskDataset.size();
     }
 
-    public void filterList(ArrayList<TaskModel> filteredList){
-        taskDataset.clear();  // Clear the existing data
-        taskDataset.addAll(filteredList);  // Add the filtered data
-        notifyDataSetChanged();
-
-    }
 }

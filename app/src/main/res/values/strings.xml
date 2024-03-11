@@ -65,4 +65,5 @@
     <string name="booked_appointments">Booked Appointments</string>
     <string name="selected_time">Selected Time</string>
     <string name="creator_id">Creator Id</string>
+    <string name="appointment_details">Appointment Details</string>
 </resources>

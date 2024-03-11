@@ -2,50 +2,52 @@ package com.example.taskappty.model;
 
 public class Appointment  {
 
-    private String date, time, id, teacherName, teacherEmail, markedBy;
+    private String timeSlot, selectedTimeSlot, appointmentDate, creatorId, teacherName, teacherEmail, confirmingUserId;
 
-    public Appointment(String date, String time, String id, String teacherName, String teacherEmail, String markedBy) {
-        this.date = date;
-        this.time = time;
-        this.id = id;
+    public Appointment(String timeSlot, String selectedTimeSlot, String appointmentDate, String creatorId, String teacherName, String teacherEmail, String confirmingUserId) {
+        this.timeSlot = timeSlot;
+        this.selectedTimeSlot = selectedTimeSlot;
+        this.appointmentDate = appointmentDate;
+        this.creatorId = creatorId;
         this.teacherName = teacherName;
         this.teacherEmail = teacherEmail;
-        this.markedBy = markedBy;
+        this.confirmingUserId = confirmingUserId;
     }
 
     public Appointment() {
     }
 
-    public String getMarkedBy() {
-        return markedBy;
+
+    public String getTimeSlot() {
+        return timeSlot;
     }
 
-    public void setMarkedBy(String markedBy) {
-        this.markedBy = markedBy;
+    public void setTimeSlot(String timeSlot) {
+        this.timeSlot = timeSlot;
     }
 
-    public String getDate() {
-        return date;
+    public String getSelectedTimeSlot() {
+        return selectedTimeSlot;
     }
 
-    public void setDate(String date) {
-        this.date = date;
+    public void setSelectedTimeSlot(String selectedTimeSlot) {
+        this.selectedTimeSlot = selectedTimeSlot;
     }
 
-    public String getTime() {
-        return time;
+    public String getAppointmentDate() {
+        return appointmentDate;
     }
 
-    public void setTime(String time) {
-        this.time = time;
+    public void setAppointmentDate(String appointmentDate) {
+        this.appointmentDate = appointmentDate;
     }
 
-    public String getId() {
-        return id;
+    public String getCreatorId() {
+        return creatorId;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setCreatorId(String creatorId) {
+        this.creatorId = creatorId;
     }
 
     public String getTeacherName() {
@@ -64,5 +66,11 @@ public class Appointment  {
         this.teacherEmail = teacherEmail;
     }
 
+    public String getConfirmingUserId() {
+        return confirmingUserId;
+    }
 
+    public void setConfirmingUserId(String confirmingUserId) {
+        this.confirmingUserId = confirmingUserId;
+    }
 }
