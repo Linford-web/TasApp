@@ -59,8 +59,8 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
             android:letterSpacing="0.1"
             android:text="@string/select_time_slot_available"
             android:textSize="15sp"
@@ -72,8 +72,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="10dp"
             android:textStyle="bold"
+            android:textSize="15sp"
+            android:letterSpacing="0.1"
             android:textColor="@color/red"
             android:text="@string/appointment_date"
              />

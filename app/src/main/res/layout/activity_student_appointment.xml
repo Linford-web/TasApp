@@ -10,7 +10,7 @@
     <View
         android:id="@+id/view"
         android:layout_width="match_parent"
-        android:layout_height="240dp"
+        android:layout_height="245dp"
         android:background="@drawable/background_views">
     </View>
 
@@ -53,7 +53,7 @@
                     android:layout_marginTop="4dp"
                     android:text="@string/user_name"
                     android:textSize="20sp"
-                    android:textColor="@color/yellow"
+                    android:textColor="@color/black"
                     android:textStyle="bold" />
 
             </LinearLayout>
@@ -85,8 +85,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:elevation="10dp"
-            android:src="@drawable/dash_image2"
-            app:tint="@color/yellow">
+            android:src="@drawable/dash_image4"
+            app:tint="@color/light">
         </ImageView>
 
     </LinearLayout>
@@ -96,7 +96,7 @@
             android:layout_height="wrap_content"
             android:text="@string/all_appointments"
             android:textSize="15sp"
-            android:textColor="@color/my_secondary"
+            android:textColor="@color/my_primary"
             android:layout_marginTop= "20dp"
             android:layout_marginBottom="10dp"
             android:textStyle="bold"

@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.TimePicker;
@@ -33,6 +34,7 @@ public class createAppointment extends AppCompatActivity {
     ProgressBar progressBar;
     AppointmentAdapter appointmentAdapter;
 
+    ImageView backButton;
     Button createButton, addTime, addDate;
     TextView datePicker, timePicker;
     String startTime, endTime;
@@ -53,6 +55,7 @@ public class createAppointment extends AppCompatActivity {
         editTextName = findViewById(R.id.editTextName);
         editTextEmail = findViewById(R.id.editTextEmail);
         progressBar = findViewById(R.id.progressbar);
+        backButton = findViewById(R.id.back_arrow);
 
         datePicker = findViewById(R.id.datePicker);
         timePicker = findViewById(R.id.startTimePicker);
@@ -64,6 +67,15 @@ public class createAppointment extends AppCompatActivity {
         appointmentAdapter = new AppointmentAdapter(new ArrayList<>());
         appointmentManager = new AppointmentManager();
 
+
+        // Back Button Click Listener to go back to the previous activity
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+
+        });
 
         addTime.setOnClickListener(new View.OnClickListener() {
             @Override

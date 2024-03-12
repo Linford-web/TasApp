@@ -4,13 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/yellow"
+    android:background="@color/light_yellow"
     tools:context=".teacherAppointment">
 
     <View
         android:id="@+id/view"
         android:layout_width="match_parent"
-        android:layout_height="240dp"
+        android:layout_height="245dp"
         android:background="@drawable/background_views_teacher">
     </View>
 
@@ -75,7 +75,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/image_view_background"
-            android:backgroundTint="@color/green"
+            android:backgroundTint="@color/my_primary"
             android:elevation="30dp"
             android:layout_marginTop="5dp"
             android:gravity="center"
@@ -86,8 +86,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:elevation="10dp"
-                android:src="@drawable/dash_image1"
-                app:tint="@color/my_secondary">
+                android:src="@drawable/dash_image4"
+                app:tint="@color/orange">
             </ImageView>
 
         </LinearLayout>
@@ -96,7 +96,7 @@
             android:layout_height="wrap_content"
             android:text="@string/my_appointments"
             android:textSize="15sp"
-            android:textColor="@color/black"
+            android:textColor="@color/my_primary"
             android:layout_marginTop="20dp"
             android:layout_marginBottom="10dp"
             android:textStyle="bold"

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/yellow"
+    android:background="@color/light_yellow"
     tools:context=".AddTask">
 
     <LinearLayout
@@ -59,7 +59,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:background="@drawable/show_task_background"
                 android:orientation="vertical">
 
                 <TextView
@@ -98,7 +97,7 @@
                     android:layout_height="80dp"
                     android:layout_marginTop="7dp"
                     android:textAlignment="viewStart"
-                    android:background="@drawable/edit_text_background"
+                    android:background="@drawable/enter_details_background"
                     android:hint="@string/task_description"
                     android:layout_margin="10dp"
                     android:padding="15dp" />

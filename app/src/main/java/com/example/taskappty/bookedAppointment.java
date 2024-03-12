@@ -47,7 +47,6 @@ public class bookedAppointment extends AppCompatActivity {
             }
         });
 
-
         // Set up RecyclerView and adapter
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         adapter = new bookedAppointmentAdapter(new ArrayList<>());
