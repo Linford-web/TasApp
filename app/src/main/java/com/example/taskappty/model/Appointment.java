@@ -2,10 +2,9 @@ package com.example.taskappty.model;
 
 public class Appointment  {
 
-    private String timeSlot, selectedTimeSlot, appointmentDate, creatorId, teacherName, teacherEmail, confirmingUserId;
+    private String selectedTimeSlot, appointmentDate, creatorId, teacherName, teacherEmail, confirmingUserId, appointmentId;
 
-    public Appointment(String timeSlot, String selectedTimeSlot, String appointmentDate, String creatorId, String teacherName, String teacherEmail, String confirmingUserId) {
-        this.timeSlot = timeSlot;
+    public Appointment( String selectedTimeSlot, String appointmentDate, String creatorId, String teacherName, String teacherEmail, String confirmingUserId) {
         this.selectedTimeSlot = selectedTimeSlot;
         this.appointmentDate = appointmentDate;
         this.creatorId = creatorId;
@@ -14,17 +13,21 @@ public class Appointment  {
         this.confirmingUserId = confirmingUserId;
     }
 
+    public Appointment(String appointmentId) {
+        this.appointmentId = appointmentId;
+    }
+
+    public String getAppointmentId() {
+        return appointmentId;
+    }
+
+    public void setAppointmentId(String appointmentId) {
+        this.appointmentId = appointmentId;
+    }
+
     public Appointment() {
     }
 
-
-    public String getTimeSlot() {
-        return timeSlot;
-    }
-
-    public void setTimeSlot(String timeSlot) {
-        this.timeSlot = timeSlot;
-    }
 
     public String getSelectedTimeSlot() {
         return selectedTimeSlot;

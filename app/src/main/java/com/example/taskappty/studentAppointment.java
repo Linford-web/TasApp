@@ -4,7 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.TextView;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -17,9 +17,7 @@ import com.example.taskappty.Adapter.AppointmentAdapter;
 import com.example.taskappty.model.AppointmentModel;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.CollectionReference;
-import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
@@ -28,7 +26,7 @@ import java.util.ArrayList;
 
 public class studentAppointment extends AppCompatActivity {
 
-    TextView back, uNameTv;
+    ImageView back;
     RecyclerView recyclerView;
     FirebaseFirestore fStore;
     CollectionReference appointmentsRef;
@@ -42,8 +40,7 @@ public class studentAppointment extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_student_appointment);
 
-        back = findViewById(R.id.back_box);
-        uNameTv = findViewById(R.id.get_user_name);
+        back = findViewById(R.id.back_arrow);
         recyclerView = findViewById(R.id.showAppointmentsRv);
         fStore = FirebaseFirestore.getInstance();
         appointmentList = new ArrayList<>();
@@ -63,9 +60,6 @@ public class studentAppointment extends AppCompatActivity {
             }
         });
 
-        // get user name and display it
-        fetchUserName();
-
         // Check for incoming appointment data from createAppointment activity
         checkIncomingIntent();
 
@@ -84,36 +78,6 @@ public class studentAppointment extends AppCompatActivity {
                 appointmentAdapter.notifyDataSetChanged();
             }
         }
-    }
-
-    private void fetchUserName() {
-        String userId = FirebaseAuth.getInstance().getUid();
-
-        if (userId != null) {
-            fStore.collection("Users")
-                    .document(userId)
-                    .get()
-                    .addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
-                        @Override
-                        public void onComplete(@NonNull Task<DocumentSnapshot> task) {
-                            if (task.isSuccessful()) {
-                                DocumentSnapshot document = task.getResult();
-                                if (document != null && document.exists()) {
-                                    String userName = document.getString("name");
-                                    // Set the user name in the TextView
-                                    uNameTv.setText(userName);
-
-                                } else {
-                                    Log.d("TAG", "No such document");
-                                }
-                            } else {
-                                Log.d("TAG", "get failed with ", task.getException());
-                                Toast.makeText(studentAppointment.this, "Error fetching user name", Toast.LENGTH_SHORT).show();
-                            }
-                        }
-                    });
-        }
-
     }
 
     private void loadAppointmentsFromFirebase() {

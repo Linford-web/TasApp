@@ -44,20 +44,39 @@
         android:orientation="vertical"
         android:gravity="center"
         android:padding="16dp">
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/teacher_name"
+            android:textSize="20sp"
+            android:layout_marginBottom="10dp"
+            android:textColor="@color/black"
+            android:textStyle="bold" />
 
         <EditText
             android:id="@+id/editTextName"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:hint="@string/name"
+            android:elevation="20dp"
+            android:layout_marginBottom="10dp"
             android:background="@drawable/enter_details_background"
             android:inputType="text" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/email"
+            android:textSize="20sp"
+            android:layout_marginBottom="10dp"
+            android:textColor="@color/black"
+            android:textStyle="bold" />
 
         <EditText
             android:id="@+id/editTextEmail"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:layout_marginTop="8dp"
+            android:elevation="20dp"
             android:background="@drawable/enter_details_background"
             android:hint="@string/email"
             android:inputType="textEmailAddress" />
@@ -73,6 +92,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
+                android:elevation="20dp"
                 android:background="@drawable/select_date_time_bg"
                 android:backgroundTint="@color/my_primary"
                 android:layout_marginEnd="10dp"
@@ -100,6 +120,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
+                android:elevation="20dp"
                 android:background="@drawable/select_date_time_bg"
                 android:backgroundTint="@color/yellow"
                 android:gravity="center"
@@ -128,11 +149,13 @@
 
         <Button
             android:id="@+id/createAppointmentBtn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="350dp"
+            android:layout_height="60dp"
+            android:elevation="20dp"
             android:layout_gravity="center"
             android:text="@string/create_appointment"
-            android:layout_marginTop="16dp" />
+            android:textSize="20sp"
+            android:layout_marginTop="40dp" />
 
         <ProgressBar
             android:id="@+id/progressbar"
@@ -142,5 +165,12 @@
             android:visibility="invisible"/>
 
     </LinearLayout>
+    <View
+        android:id="@+id/under_view"
+        android:layout_width="wrap_content"
+        android:layout_height="90dp"
+        android:backgroundTint="@color/light"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/under_background_view"/>
 
 </RelativeLayout>

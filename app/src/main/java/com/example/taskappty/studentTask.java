@@ -3,7 +3,7 @@ package com.example.taskappty;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.TextView;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -16,7 +16,6 @@ import com.example.taskappty.model.TaskModel;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
@@ -26,8 +25,8 @@ import java.util.ArrayList;
 public class studentTask extends AppCompatActivity {
 
         RecyclerView taskRv;
-        TextView userNameTv;
-        TextView back;
+
+        ImageView back;
         ArrayList<TaskModel> pendingTasks;
         TaskListAdapter taskListAdapter;
         FirebaseFirestore fStore;
@@ -42,10 +41,7 @@ public class studentTask extends AppCompatActivity {
             fStore = FirebaseFirestore.getInstance();
             fAuth = FirebaseAuth.getInstance();
 
-            userNameTv = findViewById(R.id.get_user_name);
-            back = findViewById(R.id.back_box);
-
-
+            back = findViewById(R.id.back_arrow);
 
             taskRv = findViewById(R.id.taskListRv);
             taskRv.setLayoutManager(new LinearLayoutManager(this));
@@ -67,8 +63,7 @@ public class studentTask extends AppCompatActivity {
                 }
             });
 
-            // get user name and display it
-            fetchUserName();
+
 
         }
 
@@ -105,33 +100,4 @@ public class studentTask extends AppCompatActivity {
 
     }
 
-    private void fetchUserName() {
-
-        String userId = FirebaseAuth.getInstance().getUid();
-
-        if (userId != null) {
-            fStore.collection("Users")
-                    .document(userId)
-                    .get()
-                    .addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
-                        @Override
-                        public void onComplete(@NonNull Task<DocumentSnapshot> task) {
-                            if (task.isSuccessful()) {
-                                DocumentSnapshot document = task.getResult();
-                                if (document != null && document.exists()) {
-                                    String userName = document.getString("name");
-                                    // Set the user name in the TextView
-                                    userNameTv.setText(userName);
-
-                                } else {
-                                    Log.d("TAG", "No such document");
-                                }
-                            } else {
-                                Log.d("TAG", "get failed with ", task.getException());
-                                Toast.makeText(studentTask.this, "Error fetching user name", Toast.LENGTH_SHORT).show();
-                            }
-                        }
-                    });
-        }
-    }
 }

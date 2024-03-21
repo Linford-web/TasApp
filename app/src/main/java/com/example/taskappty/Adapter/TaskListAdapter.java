@@ -67,26 +67,25 @@ public class TaskListAdapter extends RecyclerView.Adapter<TaskListAdapter.ViewHo
 
     // Replace the contents of a view (invoked by the layout manager)
     @Override
-    public void onBindViewHolder(ViewHolder viewHolder, final int position) {
+    public void onBindViewHolder(@NonNull ViewHolder viewHolder, final int position) {
+
 
         TaskModel task = taskDataset.get(position);
 
-        // Get element from your dataset at this position and replace the
-        // contents of the view with that element
+        String status = taskDataset.get(position).getTaskStatus();
+
+        // Get element from your dataset at this position and replace the contents of the view with that element
         viewHolder.taskNameTv.setText(taskDataset.get(position).getTaskName());
         viewHolder.taskStatusTv.setText(taskDataset.get(position).getTaskStatus());
 
-        String status=taskDataset.get(position).getTaskStatus();
+
 
         //change  color of status as written
-        if (status.equalsIgnoreCase("pending"))
-        {
+        if (status.equalsIgnoreCase("pending")) {
             viewHolder.taskStatusTv.setBackgroundColor(Color.parseColor("#FFFF00"));
-        }
-        else if (status.equalsIgnoreCase("completed")) {
+        } else if (status.equalsIgnoreCase("completed")) {
             viewHolder.taskStatusTv.setBackgroundColor(Color.parseColor("#00FF00"));
-        }
-        else {
+        } else {
             viewHolder.taskStatusTv.setBackgroundColor(Color.parseColor("#0000FF"));
         }
 
@@ -133,8 +132,7 @@ public class TaskListAdapter extends RecyclerView.Adapter<TaskListAdapter.ViewHo
                     public boolean onMenuItemClick(MenuItem item) {
 
                         // Deal with the delete logic of the menu items
-                        if (item.getItemId() == R.id.deleteMenu)
-                        {
+                        if (item.getItemId() == R.id.deleteMenu) {
                             FirebaseFirestore.getInstance().collection("Tasks")
                                     .document(task.getTaskId())
                                     .delete()
@@ -154,7 +152,7 @@ public class TaskListAdapter extends RecyclerView.Adapter<TaskListAdapter.ViewHo
                         }
 
                         // Logic to support tasks marked as done
-                        if (item.getItemId()==R.id.markDone){
+                        if (item.getItemId() == R.id.markDone) {
 
                             TaskModel completedTask = taskDataset.get(position);
                             completedTask.setTaskStatus("COMPLETED");

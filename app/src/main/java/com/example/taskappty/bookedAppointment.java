@@ -49,7 +49,7 @@ public class bookedAppointment extends AppCompatActivity {
 
         // Set up RecyclerView and adapter
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        adapter = new bookedAppointmentAdapter(new ArrayList<>());
+        adapter = new bookedAppointmentAdapter(new ArrayList<>(), true);
         recyclerView.setAdapter(adapter);
 
         // Set item click listener for the adapter
@@ -73,41 +73,43 @@ public class bookedAppointment extends AppCompatActivity {
 
     private void fetchBookedAppointments() {
         fStore.collection("bookedAppointments")
-                .whereEqualTo("creatorId", currentUserId)
+                .whereEqualTo("confirmingUserId", currentUserId)
                 .get()
                 .addOnCompleteListener(task -> {
                     if (task.isSuccessful()) {
                         List<Appointment> appointments = new ArrayList<>();
                         for (QueryDocumentSnapshot document : task.getResult()) {
                             Appointment appointment = document.toObject(Appointment.class);
-                            appointments.add(appointment);
+                                appointments.add(appointment);
                         }
-                        // Fetch appointments where the current user is the confirming user
-                        fetchConfirmingAppointments(appointments);
+                        // Fetch appointments where the creatorId matches the current user's ID
+                        fetchAppointmentsByCreatorId(currentUserId, appointments);
                     } else {
                         Log.e("bookedAppointment", "Error getting booked appointments", task.getException());
                     }
                 });
     }
 
-    private void fetchConfirmingAppointments(List<Appointment> creatorAppointments) {
+    private void fetchAppointmentsByCreatorId(String currentUserId, List<Appointment> appointments) {
         fStore.collection("bookedAppointments")
-                .whereEqualTo("confirmingUserId", currentUserId)
+                .whereEqualTo("creatorId", currentUserId)
                 .get()
                 .addOnCompleteListener(task -> {
                     if (task.isSuccessful()) {
                         for (QueryDocumentSnapshot document : task.getResult()) {
                             Appointment appointment = document.toObject(Appointment.class);
-                            // Add only if not already added (to avoid duplicates)
-                            if (!creatorAppointments.contains(appointment)) {
-                                creatorAppointments.add(appointment);
+                            // Add appointment if not already present (to avoid duplicates)
+                            if (!appointments.contains(appointment)) {
+                                appointments.add(appointment);
                             }
                         }
-                        updateRecyclerView(creatorAppointments);
+                        // Update the UI with the fetched appointments
+                        updateRecyclerView(appointments);
                     } else {
-                        Log.e("bookedAppointment", "Error getting confirming appointments", task.getException());
+                        Log.e("bookedAppointment", "Error getting appointments by creatorId", task.getException());
                     }
                 });
+
     }
 
     private void updateRecyclerView(List<Appointment> appointments) {
@@ -116,3 +118,43 @@ public class bookedAppointment extends AppCompatActivity {
     }
 
 }
+
+/*
+this method below does not delete the selected booked appointment but rather just renove it from the recyclerview and if you load the page again it resurfaces. ensure that it deletes the appointment from the firestore collecction permanently
+popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+    @Override
+    public boolean onMenuItemClick(MenuItem item) {
+
+
+        if (item.getItemId() == R.id.delete_menu) {
+            FirebaseFirestore.getInstance().collection("bookedAppointments")
+                    .document(appointment.getConfirmingUserId())
+                    .delete()
+                    .addOnSuccessListener(new OnSuccessListener<Void>() {
+                        @Override
+                        public void onSuccess(Void unused) {
+
+                            Toast.makeText(v.getContext(), "Appointment Deleted", Toast.LENGTH_SHORT).show();
+
+                            appointments.remove(appointment);
+                            notifyDataSetChanged();
+                            // make the card disappear after being deleted
+                            holder.linearLayout.setVisibility(View.GONE);
+
+                        }
+                    })
+                    .addOnFailureListener(new OnFailureListener() {
+                        @Override
+                        public void onFailure(@NonNull Exception e) {
+                            Toast.makeText(v.getContext(), "Failed to delete appointment", Toast.LENGTH_SHORT).show();
+                            Log.e("DeleteAppointment", "Failed to delete appointment", e);
+                        }
+                    });
+            return true;
+        }
+        return false;
+    }
+});
+
+        return false;
+correct the method */

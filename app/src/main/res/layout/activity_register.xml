@@ -126,7 +126,7 @@
             </LinearLayout>
             <Button
                 android:id="@+id/registerBtn"
-                android:layout_width="163dp"
+                android:layout_width="350dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
                 android:padding="15dp"

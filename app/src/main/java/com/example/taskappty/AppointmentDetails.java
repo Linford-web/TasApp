@@ -8,9 +8,15 @@ import android.widget.TextView;
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.FirebaseFirestore;
+
 public class AppointmentDetails extends AppCompatActivity {
 
     ImageView back;
+    FirebaseAuth fAuth;
+    FirebaseFirestore fStore;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -19,6 +25,8 @@ public class AppointmentDetails extends AppCompatActivity {
 
 
         back = findViewById(R.id.back_arrow);
+        fAuth = FirebaseAuth.getInstance();
+        fStore = FirebaseFirestore.getInstance();
 
 
         back.setOnClickListener(new View.OnClickListener() {
@@ -45,5 +53,7 @@ public class AppointmentDetails extends AppCompatActivity {
         dateTextView.setText(date);
         timeTextView.setText(time);
 
+
     }
+
 }

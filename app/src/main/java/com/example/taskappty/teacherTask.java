@@ -4,7 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.TextView;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -17,25 +17,20 @@ import com.example.taskappty.model.TaskModel;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
 
-import de.hdodenhof.circleimageview.CircleImageView;
-
 public class teacherTask extends AppCompatActivity {
 
     RecyclerView taskRv;
     ArrayList<TaskModel> dataList=new ArrayList<>();
-
     TaskListAdapter taskListAdapter;
-    CircleImageView userprofile;
-
+    ImageView back;
     FirebaseFirestore fStore;
-    TextView userNameTv;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,11 +40,9 @@ public class teacherTask extends AppCompatActivity {
         fStore = FirebaseFirestore.getInstance();
 
         taskRv=findViewById(R.id.taskListRv);
-        userprofile = findViewById(R.id.userProfileTv);
-        userNameTv = findViewById(R.id.get_user_name);
 
-        //check if user is null or not and append User Name on the text view
-        fetchUserName();
+        back = findViewById(R.id.back_arrow);
+
         dataList = new ArrayList<>();
         taskListAdapter = new TaskListAdapter(new ArrayList<>(dataList));
         //dataList.add(new TaskModel("testId", "Demo Task", "completed"));
@@ -71,6 +64,12 @@ public class teacherTask extends AppCompatActivity {
 
         fetchPendingTasks();
 
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
     }
     
     private void fetchPendingTasks() {
@@ -108,32 +107,4 @@ public class teacherTask extends AppCompatActivity {
         }
     }
 
-    private void fetchUserName() {
-
-        String userId = FirebaseAuth.getInstance().getUid();
-
-        if (userId != null) {
-            fStore.collection("Users")
-                    .document(userId)
-                    .get()
-                    .addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
-                        @Override
-                        public void onComplete(@NonNull Task<DocumentSnapshot> task) {
-                            if (task.isSuccessful()) {
-                                DocumentSnapshot document = task.getResult();
-                                if (document != null && document.exists()) {
-                                    String userName = document.getString("name");
-                                    userNameTv.setText(userName); // Set the user name in the TextView
-                                } else {
-                                    Log.d("TAG", "No such document");
-                                }
-                            } else {
-                                Log.d("TAG", "get failed with ", task.getException());
-                                Toast.makeText(teacherTask.this, "Error fetching user name", Toast.LENGTH_SHORT).show();
-                            }
-                        }
-                    });
-        }
-
-    }
 }

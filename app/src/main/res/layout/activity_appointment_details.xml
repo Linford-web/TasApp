@@ -50,6 +50,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@drawable/success_background"
             android:orientation="vertical">
 
             <TextView
@@ -59,6 +60,8 @@
                 android:letterSpacing="0.1"
                 android:text="@string/name"
                 android:textSize="20sp"
+                android:textColor="@color/orange"
+                android:gravity="center"
                 android:textStyle="bold" />
 
             <TextView
@@ -67,9 +70,10 @@
                 android:layout_height="wrap_content"
                 android:textSize="16sp"
                 android:textStyle="bold"
+                android:elevation="20dp"
                 android:text="@string/teacher_name"
                 android:layout_margin="5dp"
-                android:padding="10dp"
+                android:padding="12dp"
                 android:background="@drawable/enter_details_background"
                 android:layout_marginBottom="8dp"/>
 
@@ -79,6 +83,8 @@
                 android:layout_margin="10dp"
                 android:letterSpacing="0.1"
                 android:text="@string/email"
+                android:gravity="center"
+                android:textColor="@color/orange"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
@@ -88,16 +94,21 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
                 android:layout_marginBottom="8dp"
-                android:padding="10dp"
-                android:text="@string/email"
+                android:elevation="20dp"
                 android:background="@drawable/enter_details_background"
-                android:textSize="14sp" />
+                android:padding="12dp"
+                android:textStyle="bold"
+                android:text="@string/email"
+                android:textSize="16sp" />
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:letterSpacing="0.1"
                 android:text="@string/date"
+                android:gravity="center"
+                android:textColor="@color/orange"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
@@ -105,40 +116,41 @@
                 android:id="@+id/dateTextView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="14sp"
+                android:textSize="16sp"
                 android:layout_margin="5dp"
                 android:text="@string/date"
-                android:padding="10dp"
+                android:textStyle="bold"
+                android:elevation="20dp"
+                android:padding="12dp"
                 android:background="@drawable/enter_details_background"
                 android:layout_marginBottom="8dp"/>
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:letterSpacing="0.1"
                 android:text="@string/selected_time"
+                android:gravity="center"
+                android:textColor="@color/orange"
                 android:textSize="20sp"
                 android:textStyle="bold" />
             <TextView
                 android:id="@+id/timeTextView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:elevation="20dp"
                 android:layout_margin="10dp"
                 android:background="@drawable/enter_details_background"
                 android:text="@string/show_time"
-                android:padding="10dp"
-                android:textSize="14sp" />
+                android:textStyle="bold"
+                android:padding="12dp"
+                android:textSize="16sp" />
 
 
 
         </LinearLayout>
-        <Button
-            android:id="@+id/deleteButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/delete"
-            android:visibility="visible"/>
+
 
     </LinearLayout>
 

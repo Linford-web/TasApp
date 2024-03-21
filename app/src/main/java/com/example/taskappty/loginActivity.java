@@ -1,9 +1,5 @@
 package com.example.taskappty;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -16,6 +12,10 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -143,12 +143,6 @@ public class loginActivity extends AppCompatActivity {
 
     }
 
-
-    private void setLoggedInFlag() {
-        SharedPreferences.Editor editor = sharedPref.edit();
-        editor.putBoolean("LoggedIn",true);
-        editor.apply();
-    }
 
     // check currently logged in user making them not login again if they exit app
     private void checkUserAccessLevel(String uid) {
