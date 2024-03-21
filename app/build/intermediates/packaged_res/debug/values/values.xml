@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="blue">#90D5EC</color>
+    <color name="cream">#FFE459</color>
+    <color name="dark_green">#027148</color>
+    <color name="gray">#928E85</color>
+    <color name="green">#6EFFC0</color>
+    <color name="light">#05308C</color>
+    <color name="light_blue">#73c2fb</color>
+    <color name="light_gray">#FFC107</color>
+    <color name="light_green">#C876FD00</color>
+    <color name="light_yellow">#FFFD74</color>
+    <color name="my_primary">#0080FF</color>
+    <color name="my_secondary">#DF2FFF</color>
+    <color name="orange">#FF9800</color>
+    <color name="red">#FF0000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="yellow">#FFFF00</color>
+    <string name="add_task">Add Task</string>
+    <string name="all_appointments">All Appointments</string>
+    <string name="all_tasks">All Tasks</string>
+    <string name="app_name">TasApp</string>
+    <string name="appointment_date">Appointment Date</string>
+    <string name="appointment_details">Appointment Details</string>
+    <string name="appointment_time">Appointment Time</string>
+    <string name="appointments">Appointments</string>
+    <string name="available">Available</string>
+    <string name="back">Back</string>
+    <string name="book">Book</string>
+    <string name="book_and_manage">Book And Manage</string>
+    <string name="booked">Booked</string>
+    <string name="booked_appointments">Booked Appointments</string>
+    <string name="confirm">Confirm</string>
+    <string name="confirm_appointment">Confirm Appointment</string>
+    <string name="create_and_manage">Create And Manage</string>
+    <string name="create_appointment">Create Appointment</string>
+    <string name="creator_id">Creator Id</string>
+    <string name="date">Date</string>
+    <string name="delete">Delete</string>
+    <string name="description">Description</string>
+    <string name="developed_by_linford">Developed by Linford</string>
+    <string name="done_tasks">Done Tasks</string>
+    <string name="email">Email</string>
+    <string name="end">End</string>
+    <string name="enter_task_name">Enter Task Name</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="from">From</string>
+    <string name="from_to">From : To</string>
+    <string name="gcm_defaultSenderId" translatable="false">213665416995</string>
+    <string name="google_api_key" translatable="false">AIzaSyB0HTEow-1K2WD8sbpkJWKy1fuxNJRJoGs</string>
+    <string name="google_app_id" translatable="false">1:213665416995:android:d0ad63852cec9a6e8e6e96</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyB0HTEow-1K2WD8sbpkJWKy1fuxNJRJoGs</string>
+    <string name="google_storage_bucket" translatable="false">taskappty.appspot.com</string>
+    <string name="id_number">ID Number</string>
+    <string name="login">Login</string>
+    <string name="login_text">Already have account? LogIn.</string>
+    <string name="logout">Logout</string>
+    <string name="manage_tasks">Manage Tasks</string>
+    <string name="mark_as_done">Mark As Done</string>
+    <string name="mark_done">Mark Done</string>
+    <string name="my_appointments">My Appointments</string>
+    <string name="name">Name</string>
+    <string name="password">Password</string>
+    <string name="pending">PENDING</string>
+    <string name="profile">Profile</string>
+    <string name="project_id" translatable="false">taskappty</string>
+    <string name="register">Register</string>
+    <string name="register_as_student">Register as Student</string>
+    <string name="register_as_teacher">Register as Teacher</string>
+    <string name="register_text">No Account? Register.</string>
+    <string name="s_dash">S.Dash</string>
+    <string name="select_date">Select Date</string>
+    <string name="select_time">Select Time</string>
+    <string name="select_time_slot">Select Time Slot</string>
+    <string name="select_time_slot_available">Select Time Slot Available</string>
+    <string name="selected_time">Selected Time</string>
+    <string name="show_date">Show Date</string>
+    <string name="show_task_description">Show Task Description</string>
+    <string name="show_task_name">Show Task Name</string>
+    <string name="show_time">Show Time</string>
+    <string name="status">Status</string>
+    <string name="student_dashboard">Student Dashboard</string>
+    <string name="student_name">Student Name</string>
+    <string name="success_message">Task Successfully Added :-)</string>
+    <string name="success_message_appointment">Appointment Confirmed :-)</string>
+    <string name="t_dash">T.Dash</string>
+    <string name="task">Task</string>
+    <string name="task_description">Task Description</string>
+    <string name="task_details">Task Details</string>
+    <string name="task_name">Task Name</string>
+    <string name="teacher_dashboard">Teacher Dashboard</string>
+    <string name="teacher_name">Teacher Name</string>
+    <string name="time_slot_span">9:00-9:30</string>
+    <string name="user_name">User Name</string>
+    <string name="welcome">Welcome</string>
+    <style name="Base.Theme.TaskAppty" parent="Theme.Material3.DayNight.NoActionBar">
+        
+        
+    </style>
+    <style name="Theme.TaskAppty" parent="Base.Theme.TaskAppty"/>
+</resources>

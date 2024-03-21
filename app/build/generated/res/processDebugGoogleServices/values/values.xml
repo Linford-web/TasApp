@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="gcm_defaultSenderId" translatable="false">213665416995</string>
+    <string name="google_api_key" translatable="false">AIzaSyB0HTEow-1K2WD8sbpkJWKy1fuxNJRJoGs</string>
+    <string name="google_app_id" translatable="false">1:213665416995:android:d0ad63852cec9a6e8e6e96</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyB0HTEow-1K2WD8sbpkJWKy1fuxNJRJoGs</string>
+    <string name="google_storage_bucket" translatable="false">taskappty.appspot.com</string>
+    <string name="project_id" translatable="false">taskappty</string>
+</resources>

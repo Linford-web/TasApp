@@ -1,0 +1,330 @@
+[
+    {
+        "merged": "C:\\Users\\Linford\\.gradle\\daemon\\8.6\\com.example.taskappty.app-debug-40:\\layout_activity_display_time_grid.xml.flat",
+        "source": "C:\\Users\\Linford\\.gradle\\daemon\\8.6\\com.example.taskappty.app-main-42:\\layout\\activity_display_time_grid.xml"
+    },
+    {
+        "merged": "C:\\Users\\Linford\\.gradle\\daemon\\8.6\\com.example.taskappty.app-debug-40:\\layout_activity_login.xml.flat",
+        "source": "C:\\Users\\Linford\\.gradle\\daemon\\8.6\\com.example.taskappty.app-main-42:\\layout\\activity_login.xml"
+    },
+    {
+        "merged": "C:\\Users\\Linford\\.gradle\\daemon\\8.6\\com.example.taskappty.app-debug-40:\\drawable_select_date_time_bg.xml.flat",
+        "source": "C:\\Users\\Linford\\.gradle\\daemon\\8.6\\com.example.taskappty.app-main-42:\\drawable\\select_date_time_bg.xml"
+    },
+    {
+        "merged": "C:\\Users\\Linford\\.gradle\\daemon\\8.6\\com.example.taskappty.app-debug-40:\\drawable_camera_icon.xml.flat",
+        "source": "C:\\Users\\Linford\\.gradle\\daemon\\8.6\\com.example.taskappty.app-main-42:\\drawable\\camera_icon.xml"
+    },
+    {
+        "merged": "C:\\Users\\Linford\\.gradle\\daemon\\8.6\\com.example.taskappty.app-debug-40:\\layout_activity_done_tasks.xml.flat",
+        "source": "C:\\Users\\Linford\\.gradle\\daemon\\8.6\\com.example.taskappty.app-main-42:\\layout\\activity_done_tasks.xml"
+    },
+    {
+        "merged": "C:\\Users\\Linford\\.gradle\\daemon\\8.6\\com.example.taskappty.app-debug-40:\\drawable_image_view_background.xml.flat",
+        "source": "C:\\Users\\Linford\\.gradle\\daemon\\8.6\\com.example.taskappty.app-main-42:\\drawable\\image_view_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\Linford\\.gradle\\daemon\\8.6\\com.example.taskappty.app-debug-40:\\layout_item_booked_appointments.xml.flat",
+        "source": "C:\\Users\\Linford\\.gradle\\daemon\\8.6\\com.example.taskappty.app-main-42:\\layout\\item_booked_appointments.xml"
+    },
+    {
+        "merged": "C:\\Users\\Linford\\.gradle\\daemon\\8.6\\com.example.taskappty.app-debug-40:\\drawable_done_task_icon.xml.flat",
+        "source": "C:\\Users\\Linford\\.gradle\\daemon\\8.6\\com.example.taskappty.app-main-42:\\drawable\\done_task_icon.xml"
+    },
+    {
+        "merged": "C:\\Users\\Linford\\.gradle\\daemon\\8.6\\com.example.taskappty.app-debug-40:\\menu_appointmentmenu.xml.flat",
+        "source": "C:\\Users\\Linford\\.gradle\\daemon\\8.6\\com.example.taskappty.app-main-42:\\menu\\appointmentmenu.xml"
+    },
+    {
+        "merged": "C:\\Users\\Linford\\.gradle\\daemon\\8.6\\com.example.taskappty.app-debug-40:\\drawable_home_icon.png.flat",
+        "source": "C:\\Users\\Linford\\.gradle\\daemon\\8.6\\com.example.taskappty.app-main-42:\\drawable\\home_icon.png"
+    },
+    {
+        "merged": "C:\\Users\\Linford\\.gradle\\daemon\\8.6\\com.example.taskappty.app-debug-40:\\mipmap-xxhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\Linford\\.gradle\\daemon\\8.6\\com.example.taskappty.app-main-42:\\mipmap-xxhdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\Linford\\.gradle\\daemon\\8.6\\com.example.taskappty.app-debug-40:\\drawable_square_crop.xml.flat",
+        "source": "C:\\Users\\Linford\\.gradle\\daemon\\8.6\\com.example.taskappty.app-main-42:\\drawable\\square_crop.xml"
+    },
+    {
+        "merged": "C:\\Users\\Linford\\.gradle\\daemon\\8.6\\com.example.taskappty.app-debug-40:\\drawable_add_icon.xml.flat",
+        "source": "C:\\Users\\Linford\\.gradle\\daemon\\8.6\\com.example.taskappty.app-main-42:\\drawable\\add_icon.xml"
+    },
+    {
+        "merged": "C:\\Users\\Linford\\.gradle\\daemon\\8.6\\com.example.taskappty.app-debug-40:\\layout_activity_student_dash.xml.flat",
+        "source": "C:\\Users\\Linford\\.gradle\\daemon\\8.6\\com.example.taskappty.app-main-42:\\layout\\activity_student_dash.xml"
+    },
+    {
+        "merged": "C:\\Users\\Linford\\.gradle\\daemon\\8.6\\com.example.taskappty.app-debug-40:\\layout_activity_add_task.xml.flat",
+        "source": "C:\\Users\\Linford\\.gradle\\daemon\\8.6\\com.example.taskappty.app-main-42:\\layout\\activity_add_task.xml"
+    },
+    {
+        "merged": "C:\\Users\\Linford\\.gradle\\daemon\\8.6\\com.example.taskappty.app-debug-40:\\drawable_email_small_icon.xml.flat",
+        "source": "C:\\Users\\Linford\\.gradle\\daemon\\8.6\\com.example.taskappty.app-main-42:\\drawable\\email_small_icon.xml"
+    },
+    {
+        "merged": "C:\\Users\\Linford\\.gradle\\daemon\\8.6\\com.example.taskappty.app-debug-40:\\mipmap-xhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\Linford\\.gradle\\daemon\\8.6\\com.example.taskappty.app-main-42:\\mipmap-xhdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\Linford\\.gradle\\daemon\\8.6\\com.example.taskappty.app-debug-40:\\layout_item_time_slots.xml.flat",
+        "source": "C:\\Users\\Linford\\.gradle\\daemon\\8.6\\com.example.taskappty.app-main-42:\\layout\\item_time_slots.xml"
+    },
+    {
+        "merged": "C:\\Users\\Linford\\.gradle\\daemon\\8.6\\com.example.taskappty.app-debug-40:\\mipmap-xxxhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\Linford\\.gradle\\daemon\\8.6\\com.example.taskappty.app-main-42:\\mipmap-xxxhdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\Linford\\.gradle\\daemon\\8.6\\com.example.taskappty.app-debug-40:\\drawable_under_background_view.xml.flat",
+        "source": "C:\\Users\\Linford\\.gradle\\daemon\\8.6\\com.example.taskappty.app-main-42:\\drawable\\under_background_view.xml"
+    },
+    {
+        "merged": "C:\\Users\\Linford\\.gradle\\daemon\\8.6\\com.example.taskappty.app-debug-40:\\mipmap-mdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\Linford\\.gradle\\daemon\\8.6\\com.example.taskappty.app-main-42:\\mipmap-mdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\Linford\\.gradle\\daemon\\8.6\\com.example.taskappty.app-debug-40:\\drawable_selected_timeslot_background.xml.flat",
+        "source": "C:\\Users\\Linford\\.gradle\\daemon\\8.6\\com.example.taskappty.app-main-42:\\drawable\\selected_timeslot_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\Linford\\.gradle\\daemon\\8.6\\com.example.taskappty.app-debug-40:\\layout_activity_create_appointment.xml.flat",
+        "source": "C:\\Users\\Linford\\.gradle\\daemon\\8.6\\com.example.taskappty.app-main-42:\\layout\\activity_create_appointment.xml"
+    },
+    {
+        "merged": "C:\\Users\\Linford\\.gradle\\daemon\\8.6\\com.example.taskappty.app-debug-40:\\mipmap-mdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\Linford\\.gradle\\daemon\\8.6\\com.example.taskappty.app-main-42:\\mipmap-mdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\Linford\\.gradle\\daemon\\8.6\\com.example.taskappty.app-debug-40:\\layout_activity_teacher_task.xml.flat",
+        "source": "C:\\Users\\Linford\\.gradle\\daemon\\8.6\\com.example.taskappty.app-main-42:\\layout\\activity_teacher_task.xml"
+    },
+    {
+        "merged": "C:\\Users\\Linford\\.gradle\\daemon\\8.6\\com.example.taskappty.app-debug-40:\\xml_backup_rules.xml.flat",
+        "source": "C:\\Users\\Linford\\.gradle\\daemon\\8.6\\com.example.taskappty.app-main-42:\\xml\\backup_rules.xml"
+    },
+    {
+        "merged": "C:\\Users\\Linford\\.gradle\\daemon\\8.6\\com.example.taskappty.app-debug-40:\\layout_activity_booked_appointment.xml.flat",
+        "source": "C:\\Users\\Linford\\.gradle\\daemon\\8.6\\com.example.taskappty.app-main-42:\\layout\\activity_booked_appointment.xml"
+    },
+    {
+        "merged": "C:\\Users\\Linford\\.gradle\\daemon\\8.6\\com.example.taskappty.app-debug-40:\\drawable_edit_text_background.xml.flat",
+        "source": "C:\\Users\\Linford\\.gradle\\daemon\\8.6\\com.example.taskappty.app-main-42:\\drawable\\edit_text_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\Linford\\.gradle\\daemon\\8.6\\com.example.taskappty.app-debug-40:\\drawable_circular_background.xml.flat",
+        "source": "C:\\Users\\Linford\\.gradle\\daemon\\8.6\\com.example.taskappty.app-main-42:\\drawable\\circular_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\Linford\\.gradle\\daemon\\8.6\\com.example.taskappty.app-debug-40:\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "C:\\Users\\Linford\\.gradle\\daemon\\8.6\\com.example.taskappty.app-main-42:\\mipmap-anydpi-v26\\ic_launcher_round.xml"
+    },
+    {
+        "merged": "C:\\Users\\Linford\\.gradle\\daemon\\8.6\\com.example.taskappty.app-debug-40:\\mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\Linford\\.gradle\\daemon\\8.6\\com.example.taskappty.app-main-42:\\mipmap-xxhdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\Linford\\.gradle\\daemon\\8.6\\com.example.taskappty.app-debug-40:\\menu_taskmenu.xml.flat",
+        "source": "C:\\Users\\Linford\\.gradle\\daemon\\8.6\\com.example.taskappty.app-main-42:\\menu\\taskmenu.xml"
+    },
+    {
+        "merged": "C:\\Users\\Linford\\.gradle\\daemon\\8.6\\com.example.taskappty.app-debug-40:\\layout_activity_teacher_profile.xml.flat",
+        "source": "C:\\Users\\Linford\\.gradle\\daemon\\8.6\\com.example.taskappty.app-main-42:\\layout\\activity_teacher_profile.xml"
+    },
+    {
+        "merged": "C:\\Users\\Linford\\.gradle\\daemon\\8.6\\com.example.taskappty.app-debug-40:\\mipmap-xxxhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\Linford\\.gradle\\daemon\\8.6\\com.example.taskappty.app-main-42:\\mipmap-xxxhdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\Linford\\.gradle\\daemon\\8.6\\com.example.taskappty.app-debug-40:\\layout_activity_student_task.xml.flat",
+        "source": "C:\\Users\\Linford\\.gradle\\daemon\\8.6\\com.example.taskappty.app-main-42:\\layout\\activity_student_task.xml"
+    },
+    {
+        "merged": "C:\\Users\\Linford\\.gradle\\daemon\\8.6\\com.example.taskappty.app-debug-40:\\layout_item_task.xml.flat",
+        "source": "C:\\Users\\Linford\\.gradle\\daemon\\8.6\\com.example.taskappty.app-main-42:\\layout\\item_task.xml"
+    },
+    {
+        "merged": "C:\\Users\\Linford\\.gradle\\daemon\\8.6\\com.example.taskappty.app-debug-40:\\layout_activity_confirm_appointment.xml.flat",
+        "source": "C:\\Users\\Linford\\.gradle\\daemon\\8.6\\com.example.taskappty.app-main-42:\\layout\\activity_confirm_appointment.xml"
+    },
+    {
+        "merged": "C:\\Users\\Linford\\.gradle\\daemon\\8.6\\com.example.taskappty.app-debug-40:\\xml_data_extraction_rules.xml.flat",
+        "source": "C:\\Users\\Linford\\.gradle\\daemon\\8.6\\com.example.taskappty.app-main-42:\\xml\\data_extraction_rules.xml"
+    },
+    {
+        "merged": "C:\\Users\\Linford\\.gradle\\daemon\\8.6\\com.example.taskappty.app-debug-40:\\drawable_dash_image1.xml.flat",
+        "source": "C:\\Users\\Linford\\.gradle\\daemon\\8.6\\com.example.taskappty.app-main-42:\\drawable\\dash_image1.xml"
+    },
+    {
+        "merged": "C:\\Users\\Linford\\.gradle\\daemon\\8.6\\com.example.taskappty.app-debug-40:\\drawable_calender_small_icon.xml.flat",
+        "source": "C:\\Users\\Linford\\.gradle\\daemon\\8.6\\com.example.taskappty.app-main-42:\\drawable\\calender_small_icon.xml"
+    },
+    {
+        "merged": "C:\\Users\\Linford\\.gradle\\daemon\\8.6\\com.example.taskappty.app-debug-40:\\drawable_dash_image3.png.flat",
+        "source": "C:\\Users\\Linford\\.gradle\\daemon\\8.6\\com.example.taskappty.app-main-42:\\drawable\\dash_image3.png"
+    },
+    {
+        "merged": "C:\\Users\\Linford\\.gradle\\daemon\\8.6\\com.example.taskappty.app-debug-40:\\layout_activity_teacher_appointment.xml.flat",
+        "source": "C:\\Users\\Linford\\.gradle\\daemon\\8.6\\com.example.taskappty.app-main-42:\\layout\\activity_teacher_appointment.xml"
+    },
+    {
+        "merged": "C:\\Users\\Linford\\.gradle\\daemon\\8.6\\com.example.taskappty.app-debug-40:\\drawable_app_icon.xml.flat",
+        "source": "C:\\Users\\Linford\\.gradle\\daemon\\8.6\\com.example.taskappty.app-main-42:\\drawable\\app_icon.xml"
+    },
+    {
+        "merged": "C:\\Users\\Linford\\.gradle\\daemon\\8.6\\com.example.taskappty.app-debug-40:\\drawable_success_background.xml.flat",
+        "source": "C:\\Users\\Linford\\.gradle\\daemon\\8.6\\com.example.taskappty.app-main-42:\\drawable\\success_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\Linford\\.gradle\\daemon\\8.6\\com.example.taskappty.app-debug-40:\\drawable_booked.xml.flat",
+        "source": "C:\\Users\\Linford\\.gradle\\daemon\\8.6\\com.example.taskappty.app-main-42:\\drawable\\booked.xml"
+    },
+    {
+        "merged": "C:\\Users\\Linford\\.gradle\\daemon\\8.6\\com.example.taskappty.app-debug-40:\\layout_activity_teacher_dash.xml.flat",
+        "source": "C:\\Users\\Linford\\.gradle\\daemon\\8.6\\com.example.taskappty.app-main-42:\\layout\\activity_teacher_dash.xml"
+    },
+    {
+        "merged": "C:\\Users\\Linford\\.gradle\\daemon\\8.6\\com.example.taskappty.app-debug-40:\\mipmap-hdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\Linford\\.gradle\\daemon\\8.6\\com.example.taskappty.app-main-42:\\mipmap-hdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.example.taskappty.app-debug-40:/layout_activity_teacher_dash.xml.flat",
+        "source": "com.example.taskappty.app-main-42:/layout/activity_teacher_dash.xml"
+    },
+    {
+        "merged": "C:\\Users\\Linford\\.gradle\\daemon\\8.6\\com.example.taskappty.app-debug-40:\\layout_activity_student_appointment.xml.flat",
+        "source": "C:\\Users\\Linford\\.gradle\\daemon\\8.6\\com.example.taskappty.app-main-42:\\layout\\activity_student_appointment.xml"
+    },
+    {
+        "merged": "C:\\Users\\Linford\\.gradle\\daemon\\8.6\\com.example.taskappty.app-debug-40:\\drawable_back_arrow.xml.flat",
+        "source": "C:\\Users\\Linford\\.gradle\\daemon\\8.6\\com.example.taskappty.app-main-42:\\drawable\\back_arrow.xml"
+    },
+    {
+        "merged": "C:\\Users\\Linford\\.gradle\\daemon\\8.6\\com.example.taskappty.app-debug-40:\\drawable_clock_small_icon.xml.flat",
+        "source": "C:\\Users\\Linford\\.gradle\\daemon\\8.6\\com.example.taskappty.app-main-42:\\drawable\\clock_small_icon.xml"
+    },
+    {
+        "merged": "C:\\Users\\Linford\\.gradle\\daemon\\8.6\\com.example.taskappty.app-debug-40:\\drawable_ic_launcher_foreground.xml.flat",
+        "source": "C:\\Users\\Linford\\.gradle\\daemon\\8.6\\com.example.taskappty.app-main-42:\\drawable\\ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "C:\\Users\\Linford\\.gradle\\daemon\\8.6\\com.example.taskappty.app-debug-40:\\drawable_done_task.xml.flat",
+        "source": "C:\\Users\\Linford\\.gradle\\daemon\\8.6\\com.example.taskappty.app-main-42:\\drawable\\done_task.xml"
+    },
+    {
+        "merged": "C:\\Users\\Linford\\.gradle\\daemon\\8.6\\com.example.taskappty.app-debug-40:\\layout_activity_register.xml.flat",
+        "source": "C:\\Users\\Linford\\.gradle\\daemon\\8.6\\com.example.taskappty.app-main-42:\\layout\\activity_register.xml"
+    },
+    {
+        "merged": "C:\\Users\\Linford\\.gradle\\daemon\\8.6\\com.example.taskappty.app-debug-40:\\mipmap-hdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\Linford\\.gradle\\daemon\\8.6\\com.example.taskappty.app-main-42:\\mipmap-hdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\Linford\\.gradle\\daemon\\8.6\\com.example.taskappty.app-debug-40:\\drawable_dash_image4.png.flat",
+        "source": "C:\\Users\\Linford\\.gradle\\daemon\\8.6\\com.example.taskappty.app-main-42:\\drawable\\dash_image4.png"
+    },
+    {
+        "merged": "C:\\Users\\Linford\\.gradle\\daemon\\8.6\\com.example.taskappty.app-debug-40:\\drawable_checklist_icon.xml.flat",
+        "source": "C:\\Users\\Linford\\.gradle\\daemon\\8.6\\com.example.taskappty.app-main-42:\\drawable\\checklist_icon.xml"
+    },
+    {
+        "merged": "C:\\Users\\Linford\\.gradle\\daemon\\8.6\\com.example.taskappty.app-debug-40:\\layout_activity_student_profile.xml.flat",
+        "source": "C:\\Users\\Linford\\.gradle\\daemon\\8.6\\com.example.taskappty.app-main-42:\\layout\\activity_student_profile.xml"
+    },
+    {
+        "merged": "C:\\Users\\Linford\\.gradle\\daemon\\8.6\\com.example.taskappty.app-debug-40:\\drawable_clock_icon.xml.flat",
+        "source": "C:\\Users\\Linford\\.gradle\\daemon\\8.6\\com.example.taskappty.app-main-42:\\drawable\\clock_icon.xml"
+    },
+    {
+        "merged": "C:\\Users\\Linford\\.gradle\\daemon\\8.6\\com.example.taskappty.app-debug-40:\\drawable_background_views_teacher.xml.flat",
+        "source": "C:\\Users\\Linford\\.gradle\\daemon\\8.6\\com.example.taskappty.app-main-42:\\drawable\\background_views_teacher.xml"
+    },
+    {
+        "merged": "C:\\Users\\Linford\\.gradle\\daemon\\8.6\\com.example.taskappty.app-debug-40:\\drawable_success_icon2.gif.flat",
+        "source": "C:\\Users\\Linford\\.gradle\\daemon\\8.6\\com.example.taskappty.app-main-42:\\drawable\\success_icon2.gif"
+    },
+    {
+        "merged": "C:\\Users\\Linford\\.gradle\\daemon\\8.6\\com.example.taskappty.app-debug-40:\\drawable_profile_image.png.flat",
+        "source": "C:\\Users\\Linford\\.gradle\\daemon\\8.6\\com.example.taskappty.app-main-42:\\drawable\\profile_image.png"
+    },
+    {
+        "merged": "C:\\Users\\Linford\\.gradle\\daemon\\8.6\\com.example.taskappty.app-debug-40:\\drawable_profile_small_icon.xml.flat",
+        "source": "C:\\Users\\Linford\\.gradle\\daemon\\8.6\\com.example.taskappty.app-main-42:\\drawable\\profile_small_icon.xml"
+    },
+    {
+        "merged": "C:\\Users\\Linford\\.gradle\\daemon\\8.6\\com.example.taskappty.app-debug-40:\\drawable_ic_launcher_background.xml.flat",
+        "source": "C:\\Users\\Linford\\.gradle\\daemon\\8.6\\com.example.taskappty.app-main-42:\\drawable\\ic_launcher_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\Linford\\.gradle\\daemon\\8.6\\com.example.taskappty.app-debug-40:\\mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\Linford\\.gradle\\daemon\\8.6\\com.example.taskappty.app-main-42:\\mipmap-xhdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\Linford\\.gradle\\daemon\\8.6\\com.example.taskappty.app-debug-40:\\layout_item_appointment.xml.flat",
+        "source": "C:\\Users\\Linford\\.gradle\\daemon\\8.6\\com.example.taskappty.app-main-42:\\layout\\item_appointment.xml"
+    },
+    {
+        "merged": "C:\\Users\\Linford\\.gradle\\daemon\\8.6\\com.example.taskappty.app-debug-40:\\drawable_menu_icon.xml.flat",
+        "source": "C:\\Users\\Linford\\.gradle\\daemon\\8.6\\com.example.taskappty.app-main-42:\\drawable\\menu_icon.xml"
+    },
+    {
+        "merged": "C:\\Users\\Linford\\.gradle\\daemon\\8.6\\com.example.taskappty.app-debug-40:\\drawable_enter_details_background.xml.flat",
+        "source": "C:\\Users\\Linford\\.gradle\\daemon\\8.6\\com.example.taskappty.app-main-42:\\drawable\\enter_details_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\Linford\\.gradle\\daemon\\8.6\\com.example.taskappty.app-debug-40:\\drawable_slide_under_view.xml.flat",
+        "source": "C:\\Users\\Linford\\.gradle\\daemon\\8.6\\com.example.taskappty.app-main-42:\\drawable\\slide_under_view.xml"
+    },
+    {
+        "merged": "C:\\Users\\Linford\\.gradle\\daemon\\8.6\\com.example.taskappty.app-debug-40:\\drawable_task_icon.xml.flat",
+        "source": "C:\\Users\\Linford\\.gradle\\daemon\\8.6\\com.example.taskappty.app-main-42:\\drawable\\task_icon.xml"
+    },
+    {
+        "merged": "C:\\Users\\Linford\\.gradle\\daemon\\8.6\\com.example.taskappty.app-debug-40:\\layout_activity_appointment_details.xml.flat",
+        "source": "C:\\Users\\Linford\\.gradle\\daemon\\8.6\\com.example.taskappty.app-main-42:\\layout\\activity_appointment_details.xml"
+    },
+    {
+        "merged": "C:\\Users\\Linford\\.gradle\\daemon\\8.6\\com.example.taskappty.app-debug-40:\\layout_activity_splash_screen.xml.flat",
+        "source": "C:\\Users\\Linford\\.gradle\\daemon\\8.6\\com.example.taskappty.app-main-42:\\layout\\activity_splash_screen.xml"
+    },
+    {
+        "merged": "C:\\Users\\Linford\\.gradle\\daemon\\8.6\\com.example.taskappty.app-debug-40:\\drawable_background_time_slots.xml.flat",
+        "source": "C:\\Users\\Linford\\.gradle\\daemon\\8.6\\com.example.taskappty.app-main-42:\\drawable\\background_time_slots.xml"
+    },
+    {
+        "merged": "C:\\Users\\Linford\\.gradle\\daemon\\8.6\\com.example.taskappty.app-debug-40:\\drawable_show_task_background.xml.flat",
+        "source": "C:\\Users\\Linford\\.gradle\\daemon\\8.6\\com.example.taskappty.app-main-42:\\drawable\\show_task_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\Linford\\.gradle\\daemon\\8.6\\com.example.taskappty.app-debug-40:\\drawable_background_views.xml.flat",
+        "source": "C:\\Users\\Linford\\.gradle\\daemon\\8.6\\com.example.taskappty.app-main-42:\\drawable\\background_views.xml"
+    },
+    {
+        "merged": "C:\\Users\\Linford\\.gradle\\daemon\\8.6\\com.example.taskappty.app-debug-40:\\drawable_appointment_icon.xml.flat",
+        "source": "C:\\Users\\Linford\\.gradle\\daemon\\8.6\\com.example.taskappty.app-main-42:\\drawable\\appointment_icon.xml"
+    },
+    {
+        "merged": "C:\\Users\\Linford\\.gradle\\daemon\\8.6\\com.example.taskappty.app-debug-40:\\drawable_success_icon.xml.flat",
+        "source": "C:\\Users\\Linford\\.gradle\\daemon\\8.6\\com.example.taskappty.app-main-42:\\drawable\\success_icon.xml"
+    },
+    {
+        "merged": "C:\\Users\\Linford\\.gradle\\daemon\\8.6\\com.example.taskappty.app-debug-40:\\mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "C:\\Users\\Linford\\.gradle\\daemon\\8.6\\com.example.taskappty.app-main-42:\\mipmap-anydpi-v26\\ic_launcher.xml"
+    },
+    {
+        "merged": "C:\\Users\\Linford\\.gradle\\daemon\\8.6\\com.example.taskappty.app-debug-40:\\layout_activity_view_tasks.xml.flat",
+        "source": "C:\\Users\\Linford\\.gradle\\daemon\\8.6\\com.example.taskappty.app-main-42:\\layout\\activity_view_tasks.xml"
+    },
+    {
+        "merged": "com.example.taskappty.app-debug-40:/layout_activity_student_dash.xml.flat",
+        "source": "com.example.taskappty.app-main-42:/layout/activity_student_dash.xml"
+    },
+    {
+        "merged": "C:\\Users\\Linford\\.gradle\\daemon\\8.6\\com.example.taskappty.app-debug-40:\\drawable_dash_image2.xml.flat",
+        "source": "C:\\Users\\Linford\\.gradle\\daemon\\8.6\\com.example.taskappty.app-main-42:\\drawable\\dash_image2.xml"
+    },
+    {
+        "merged": "C:\\Users\\Linford\\.gradle\\daemon\\8.6\\com.example.taskappty.app-debug-40:\\drawable_status_background.xml.flat",
+        "source": "C:\\Users\\Linford\\.gradle\\daemon\\8.6\\com.example.taskappty.app-main-42:\\drawable\\status_background.xml"
+    }
+]
